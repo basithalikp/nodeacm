@@ -1,0 +1,52 @@
+<%- include('partials/header') %>
+
+    <main class="content-wrapper">
+        <section class="page-section about-section">
+            <section> 
+                <h1 class="page-heading gradient-text">About Us</h1>
+                <p class="page-subheading">We are NSS College of Engineering's leading organization for Computer Science and Technology. Our mission is to empower students with practical experience, industry networking opportunities, and a vibrant community of tech enthusiasts.</p>
+                <p class="page-subheading">We strive to enrich the journey of NSSCE tech students by offering a dynamic platform for learning, collaboration, and knowledge-sharing through our interactive labs and engaging presentations.</p>
+            </section> 
+            <div class="about-certificate-container">
+                <div class="certificate"><img src="/images/certificate.png" class="certificate-img"></div>
+            </div>
+            <div class="vision-mission-container">
+                <div class="vision-mission-card liquid-glass">
+                    <h3>Our Vision</h3>
+                    <p><%= siteConfig.vision %></p>
+                </div>
+                <div class="vision-mission-card liquid-glass">
+                    <h3>Our Mission</h3>
+                    <p><%= siteConfig.mission %></p>
+                </div>
+            </div>
+
+            <div class="contact-us-container">
+                <h2 class="contact-heading">Join Us</h2>
+                <button class="btn-gradient join-btn"><a href="<%= siteConfig.joinUrl %>">Join Now</a></button>
+                <h3 style="font-family: 'Inter';">Any concerns?</h3>
+                <div class="contact-grid">
+                    <% contactPersons.forEach(person => { %>
+                        <div class="contact-person">
+                            <h4><%= person.role %>: <%= person.name %></h4>
+                            <a href="https://wa.me/<%= person.whatsapp %>" class="contact-link" target="_blank">
+                                <i class="fab fa-whatsapp"></i> Message on WhatsApp
+                            </a>
+                        </div>
+                    <% }) %>
+                </div>
+            </div>
+
+            <div class="connect-banner">
+                <h2>Connect With Us Online</h2>
+                <div class="footer-socials">
+                    <a href="<%= socialLinks.linkedin %>" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="<%= socialLinks.instagram %>" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="<%= socialLinks.github %>" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="<%= socialLinks.email %>" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+<%- include('partials/footer') %>

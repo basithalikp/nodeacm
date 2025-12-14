@@ -1,0 +1,9 @@
+<!-- Team Section Component (for team page) -->
+<h2 class="team-sub-heading"><%= title %></h2>
+<div class="team-grid-container <%= typeof singleCard !== 'undefined' && singleCard ? 'single-card' : '' %> liquid-glass">
+    <div class="team-grid">
+        <% members.forEach(member => { %>
+            <%- include('team-card-full', { member: member }) %>
+        <% }) %>
+    </div>
+</div>

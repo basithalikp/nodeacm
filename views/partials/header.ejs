@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    
+    <meta name="description" content="<%= siteConfig.description %>">
+    <meta name="keywords" content="<%= siteConfig.keywords %>">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <!-- Dynamic Background Canvas -->
+    <canvas id="dynamic-bg"></canvas>
+    
+    <header>
+        <div class="navbar-container">
+            <nav class="navbar liquid-glass">
+                <a href="/" class="nav-logo">
+                    <img src="<%= siteConfig.logo %>" alt="ACM Logo" width="40" height="40">
+                </a>
+                <div class="nav-links" id="nav-links">
+                    <% navLinks.forEach(link => { %>
+                        <a href="<%= link.href %>" class="nav-link <%= currentPath === link.href ? 'active' : '' %>"><%= link.name %></a>
+                    <% }) %>
+                </div>
+                <button class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>

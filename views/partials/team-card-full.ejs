@@ -1,0 +1,19 @@
+<!-- Team Card Full Component (for team page with social links) -->
+<div class="card team-card-full">
+    <img src="<%= member.image %>" alt="<%= member.name %>" class="card-img-top" loading="lazy">
+    <div class="card-body">
+        <h3 class="card-title-team"><%= member.name %></h3>
+        <p class="card-text-role"><%= member.role %></p>
+        <div class="team-socials">
+            <% if (member.socials.linkedin) { %>
+                <a href="<%= member.socials.linkedin %>" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <% } %>
+            <% if (member.socials.github) { %>
+                <a href="<%= member.socials.github %>" target="_blank"><i class="fab fa-github"></i></a>
+            <% } %>
+            <% if (member.socials.website) { %>
+                <a href="<%= member.socials.website %>" target="_blank"><i class="fa-solid fa-address-card"></i></a>
+            <% } %>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+<%- include('partials/header') %>
+
+    <main class="content-wrapper">
+        <section class="page-section">
+            <h1 class="page-heading gradient-text">Our Team</h1>
+            <p class="page-subheading">The driving force behind the NSSCE ACM Student Chapter.</p>
+
+            <!-- Faculty Advisor -->
+            <h2 class="team-sub-heading">Faculty Advisor</h2>
+            <div class="team-grid-container single-card liquid-glass">
+                <% facultyAdvisor.forEach(member => { %>
+                    <%- include('partials/team-card-full', { member: member }) %>
+                <% }) %>
+            </div>
+            
+            <!-- Core Committee -->
+            <% if (coreCommittee.length > 0) { %>
+                <%- include('partials/team-section', { title: 'Core Committee', members: coreCommittee }) %>
+            <% } %>
+
+            <!-- Tech Team -->
+            <% if (techTeam.length > 0) { %>
+                <%- include('partials/team-section', { title: 'Tech Team', members: techTeam }) %>
+            <% } %>
+
+            <!-- Design Team -->
+            <% if (designTeam.length > 0) { %>
+                <%- include('partials/team-section', { title: 'Design Team', members: designTeam }) %>
+            <% } %>
+
+            <!-- Membership Advisors -->
+            <% if (membershipAdvisors.length > 0) { %>
+                <%- include('partials/team-section', { title: 'Membership Advisors', members: membershipAdvisors }) %>
+            <% } %>
+
+            <!-- Media Team -->
+            <% if (mediaTeam.length > 0) { %>
+                <%- include('partials/team-section', { title: 'Media Team', members: mediaTeam }) %>
+            <% } %>
+
+            <!-- Content Team -->
+            <% if (contentTeam.length > 0) { %>
+                <%- include('partials/team-section', { title: 'Content Team', members: contentTeam }) %>
+            <% } %>
+        </section>
+    </main>
+
+<%- include('partials/footer') %>

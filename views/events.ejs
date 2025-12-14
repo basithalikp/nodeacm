@@ -1,0 +1,18 @@
+<%- include('partials/header') %>
+
+    <main class="content-wrapper">
+        <section class="page-section">
+            <h1 class="page-heading gradient-text">Our Events</h1>
+            <p class="page-subheading">A look at our past, present, and future workshops, competitions, and seminars.</p>
+            
+            <div class="events-grid-container liquid-glass">
+                <div class="events-grid">
+                    <% events.forEach(event => { %>
+                        <%- include('partials/event-card-full', { event: event }) %>
+                    <% }) %>
+                </div>
+            </div>
+        </section>
+    </main>
+
+<%- include('partials/footer') %>
