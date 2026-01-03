@@ -1,12 +1,12 @@
 <%- include('partials/header') %>
 
-    <main class="content-wrapper">
-        <section class="page-section">
-            <h1 class="page-heading gradient-text">Our Events</h1>
+    <main id="main-content" class="content-wrapper" role="main">
+        <section class="page-section" aria-labelledby="events-page-heading">
+            <h1 id="events-page-heading" class="page-heading gradient-text">Our Events</h1>
             <p class="page-subheading">A look at our past, present, and future workshops, competitions, and seminars.</p>
             
             <div class="events-grid-container liquid-glass">
-                <div class="events-grid">
+                <div class="events-grid" role="list">
                     <% events.forEach(event => { %>
                         <%- include('partials/event-card-full', { event: event }) %>
                     <% }) %>

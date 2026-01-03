@@ -25,6 +25,13 @@ html {
   scroll-behavior: smooth;
 }
 
+/* --- Focus Styles for Accessibility --- */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--gradient-end);
+  outline-offset: 3px;
+}
+
 body {
   font-family: var(--font-body);
   background-color: var(--bg-color);

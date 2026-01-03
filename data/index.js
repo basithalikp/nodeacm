@@ -6,7 +6,7 @@ const siteConfig = {
     name: 'NSSCE ACM Student Chapter',
     shortName: 'ACM NSSCE',
     description: 'The official website for the NSSCE ACM Student Chapter. Join us to explore the world of computing.',
-    keywords: 'ACM, NSSCE, Computer Science, Technology, Coding, Workshops',
+    keywords: 'ACM, NSSCE, Computer Science, Technology, Coding, Workshops, NSS College of Engineering, Student Chapter, Kerala, India, Programming, Hackathons, Tech Events',
     logo: 'https://github.com/basithalikp/image-cdn/blob/main/acm/acmLogo.png?raw=true',
     email: 'syamsankar@nssce.ac.in',
     webAdminEmail: '24b789@nssce.ac.in',
@@ -17,7 +17,26 @@ const siteConfig = {
         text: 'The NSS College of Engineering ACM Student Chapter is a student-driven community under the Association for Computing Machinery (ACM) that fosters innovation, collaboration, and learning in the field of computer science and engineering. It organizes workshops, hackathons, talks, and technical events to enhance members\' skills, encourage research, and build a strong peer network aligned with global ACM standards.'
     },
     vision: 'Our vision is to build a vibrant and collaborative community where tech enthusiasts unite to innovate, develop their expertise, and promote a culture of ongoing learning and teamwork.',
-    mission: 'Connecting academia with industry, our platform acts as a center for knowledge-sharing, collaboration, and innovation. We enable individuals to effectively integrate theoretical learning with real-world practice.'
+    mission: 'Connecting academia with industry, our platform acts as a center for knowledge-sharing, collaboration, and innovation. We enable individuals to effectively integrate theoretical learning with real-world practice.',
+    // SEO Configuration
+    siteUrl: process.env.SITE_URL || 'https://acm.nssce.ac.in',
+    ogImage: 'https://github.com/basithalikp/image-cdn/blob/main/acm/og-image.png?raw=true',
+    twitterHandle: '@acmnssce',
+    locale: 'en_IN',
+    // Structured Data
+    organization: {
+        type: 'EducationalOrganization',
+        name: 'NSSCE ACM Student Chapter',
+        alternateName: 'ACM NSSCE',
+        parentOrganization: 'Association for Computing Machinery (ACM)',
+        address: {
+            streetAddress: 'NSS College of Engineering',
+            addressLocality: 'Palakkad',
+            addressRegion: 'Kerala',
+            postalCode: '678008',
+            addressCountry: 'IN'
+        }
+    }
 };
 
 // Navigation Links

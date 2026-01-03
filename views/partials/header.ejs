@@ -5,34 +5,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
     
-    <meta name="description" content="<%= siteConfig.description %>">
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="<%= title %>">
+    <meta name="description" content="<%= typeof pageDescription !== 'undefined' ? pageDescription : siteConfig.description %>">
     <meta name="keywords" content="<%= siteConfig.keywords %>">
+    <meta name="author" content="<%= siteConfig.name %>">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
     
+    <!-- Canonical URL -->
+    <link rel="canonical" href="<%= siteConfig.siteUrl %><%= currentPath === '/' ? '' : currentPath %>">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<%= siteConfig.siteUrl %><%= currentPath === '/' ? '' : currentPath %>">
+    <meta property="og:title" content="<%= title %>">
+    <meta property="og:description" content="<%= typeof pageDescription !== 'undefined' ? pageDescription : siteConfig.description %>">
+    <meta property="og:image" content="<%= typeof ogImage !== 'undefined' ? ogImage : siteConfig.ogImage %>">
+    <meta property="og:image:alt" content="<%= siteConfig.name %>">
+    <meta property="og:site_name" content="<%= siteConfig.name %>">
+    <meta property="og:locale" content="<%= siteConfig.locale %>">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="<%= siteConfig.siteUrl %><%= currentPath === '/' ? '' : currentPath %>">
+    <meta name="twitter:title" content="<%= title %>">
+    <meta name="twitter:description" content="<%= typeof pageDescription !== 'undefined' ? pageDescription : siteConfig.description %>">
+    <meta name="twitter:image" content="<%= typeof ogImage !== 'undefined' ? ogImage : siteConfig.ogImage %>">
+    <meta name="twitter:site" content="<%= siteConfig.twitterHandle %>">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="<%= siteConfig.logo %>">
+    <link rel="apple-touch-icon" href="<%= siteConfig.logo %>">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "<%= siteConfig.organization.type %>",
+        "name": "<%= siteConfig.organization.name %>",
+        "alternateName": "<%= siteConfig.organization.alternateName %>",
+        "url": "<%= siteConfig.siteUrl %>",
+        "logo": "<%= siteConfig.logo %>",
+        "description": "<%= siteConfig.description %>",
+        "email": "<%= siteConfig.email %>",
+        "sameAs": [
+            "<%= socialLinks.linkedin %>",
+            "<%= socialLinks.instagram %>",
+            "<%= socialLinks.github %>"
+        ],
+        "parentOrganization": {
+            "@type": "Organization",
+            "name": "<%= siteConfig.organization.parentOrganization %>"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "<%= siteConfig.organization.address.streetAddress %>",
+            "addressLocality": "<%= siteConfig.organization.address.addressLocality %>",
+            "addressRegion": "<%= siteConfig.organization.address.addressRegion %>",
+            "postalCode": "<%= siteConfig.organization.address.postalCode %>",
+            "addressCountry": "<%= siteConfig.organization.address.addressCountry %>"
+        }
+    }
+    </script>
+    <% if (typeof breadcrumbs !== 'undefined' && breadcrumbs.length > 0) { %>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            <% breadcrumbs.forEach((crumb, index) => { %>
+            {
+                "@type": "ListItem",
+                "position": <%= index + 1 %>,
+                "name": "<%= crumb.name %>",
+                "item": "<%= siteConfig.siteUrl %><%= crumb.url %>"
+            }<%= index < breadcrumbs.length - 1 ? ',' : '' %>
+            <% }) %>
+        ]
+    }
+    </script>
+    <% } %>
+    
+    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://github.com">
+    
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
     
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     
+    <!-- Main Stylesheet -->
     <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
     <!-- Dynamic Background Canvas -->
-    <canvas id="dynamic-bg"></canvas>
+    <canvas id="dynamic-bg" aria-hidden="true"></canvas>
     
-    <header>
+    <header role="banner">
         <div class="navbar-container">
-            <nav class="navbar liquid-glass">
-                <a href="/" class="nav-logo">
-                    <img src="<%= siteConfig.logo %>" alt="ACM Logo" width="40" height="40">
+            <nav class="navbar liquid-glass" role="navigation" aria-label="Main navigation">
+                <a href="/" class="nav-logo" aria-label="<%= siteConfig.name %> - Home">
+                    <img src="<%= siteConfig.logo %>" alt="<%= siteConfig.shortName %> Logo" width="40" height="40" loading="eager">
                 </a>
                 <div class="nav-links" id="nav-links">
                     <% navLinks.forEach(link => { %>
                         <a href="<%= link.href %>" class="nav-link <%= currentPath === link.href ? 'active' : '' %>"><%= link.name %></a>
                     <% }) %>
                 </div>
-                <button class="hamburger" id="hamburger">
-                    <i class="fas fa-bars"></i>
+                <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
                 </button>
             </nav>
         </div>

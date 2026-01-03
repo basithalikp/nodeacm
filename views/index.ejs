@@ -1,23 +1,23 @@
 <%- include('partials/header') %>
 
-    <main class="content-wrapper">
-        <section class="hero-section">
-            <h1 class="main-heading">NSS College of Engineering<br><span class="gradient-text">ACM Student Chapter</span></h1>
+    <main id="main-content" class="content-wrapper" role="main">
+        <section class="hero-section" aria-labelledby="hero-heading">
+            <h1 id="hero-heading" class="main-heading">NSS College of Engineering<br><span class="gradient-text">ACM Student Chapter</span></h1>
             <p class="sub-heading" style="font-family: var(--font-heading); font-size: 1.2rem;">NSSCE's premier organization for Computer Science and Information Technology.</p>
         </section>
 
-        <section class="intro-section liquid-glass">
-            <h2><%= siteConfig.intro.heading %></h2>
+        <section class="intro-section liquid-glass" aria-labelledby="intro-heading">
+            <h2 id="intro-heading"><%= siteConfig.intro.heading %></h2>
             <p><%= siteConfig.intro.text %></p>
         </section>
 
-        <section class="home-deck-section">
+        <section class="home-deck-section" aria-labelledby="events-heading">
             <div class="deck-header">
-                <h2><a href="/events">Upcoming Events</a></h2>
-                <a href="/events" class="btn-gradient">More Events <i class="fas fa-arrow-right"></i></a>
+                <h2 id="events-heading"><a href="/events">Upcoming Events</a></h2>
+                <a href="/events" class="btn-gradient" aria-label="View more events">More Events <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </div>
             <div class="card-deck-container liquid-glass">
-                <div class="card-deck horizontal-scroll">
+                <div class="card-deck horizontal-scroll" role="list">
                     <% featuredEvents.forEach(event => { %>
                         <%- include('partials/event-card', { event: event }) %>
                     <% }) %>
@@ -25,13 +25,13 @@
             </div>
         </section>
 
-        <section class="home-deck-section">
+        <section class="home-deck-section" aria-labelledby="team-heading">
             <div class="deck-header">
-                <h2><a href="/team">Meet The Team</a></h2>
-                <a href="/team" class="btn-gradient">More Members <i class="fas fa-arrow-right"></i></a>
+                <h2 id="team-heading"><a href="/team">Meet The Team</a></h2>
+                <a href="/team" class="btn-gradient" aria-label="View all team members">More Members <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </div>
             <div class="card-deck-container liquid-glass">
-                <div class="card-deck horizontal-scroll">
+                <div class="card-deck horizontal-scroll" role="list">
                     <% featuredTeam.forEach(member => { %>
                         <%- include('partials/team-card', { member: member }) %>
                     <% }) %>
@@ -39,15 +39,15 @@
             </div>
         </section>
 
-        <section class="join-us-section">
-            <h2>Why Join Us?</h2>
+        <section class="join-us-section" aria-labelledby="join-heading">
+            <h2 id="join-heading">Why Join Us?</h2>
             <div class="benefits-container">
-                <ul>
+                <ul role="list">
                     <% benefits.forEach(benefit => { %>
-                        <li><i class="fas fa-check-circle"></i> <%= benefit %></li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> <%= benefit %></li>
                     <% }) %>
                 </ul>
-                <a href="/about" class="btn-gradient">Learn More & Join</a>
+                <a href="/about" class="btn-gradient" aria-label="Learn more about joining NSSCE ACM">Learn More & Join</a>
             </div>
         </section>
     </main>
