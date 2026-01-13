@@ -3,7 +3,7 @@ const path = require('path');
 const compression = require('compression');
 
 // Import centralized data
-const { siteConfig, teamMembers, events, socialLinks, navLinks, benefits } = require('./data');
+const { siteConfig, teamMembers, events, pastEvents, futureEvents, socialLinks, navLinks, benefits } = require('./data');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -34,7 +34,7 @@ const getFeaturedTeam = () => {
 
 // Helper function to get featured events (upcoming)
 const getFeaturedEvents = (count = 4) => {
-    return events.slice(0, count);
+    return futureEvents.slice(0, count);
 };
 
 // Make common data available to all templates
@@ -62,7 +62,8 @@ app.get('/events', (req, res) => {
     res.render('events', {
         title: 'Events & Workshops | NSSCE ACM Student Chapter',
         pageDescription: 'Discover upcoming and past events at NSSCE ACM - workshops, hackathons, coding competitions, tech talks, and seminars for computer science students.',
-        events: events,
+        futureEvents: futureEvents,
+        pastEvents: pastEvents,
         breadcrumbs: [
             { name: 'Home', url: '/' },
             { name: 'Events', url: '/events' }

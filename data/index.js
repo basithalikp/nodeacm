@@ -305,23 +305,43 @@ const teamMembers = [
     }
 ];
 
-// Events - Centralized data reused across index.html and events.html
-const events = [
+// Past Events - Events that have already occurred
+const pastEvents = [
     {
         id: 'ai-ml-workshop',
         title: 'Inaugration & Talk on AI',
-        date: 'Jan 06, 2025',
+        date: 'Jan 08, 2026',
         description: 'The Future of AI : Knowledge, skills and employability',
-        image: 'https://github.com/basithalikp/image-cdn/blob/main/acm/events/AIandML.jpg?raw=true'
-    },
+        image: 'https://github.com/basithalikp/image-cdn/blob/main/acm/events/AIandML.jpg?raw=true',
+        photos: [
+            'https://github.com/basithalikp/image-cdn/blob/main/acm/events/AIandML/AIandML1.jpg?raw=true',
+            'https://github.com/basithalikp/image-cdn/blob/main/acm/events/AIandML/AIandML2.jpg?raw=true',
+            'https://github.com/basithalikp/image-cdn/blob/main/acm/events/AIandML/AIandML3.jpg?raw=true',
+            'https://github.com/basithalikp/image-cdn/blob/main/acm/events/AIandML/AIandML4.jpg?raw=true',
+            'https://github.com/basithalikp/image-cdn/blob/main/acm/events/AIandML/AIandML5.jpeg?raw=true',
+            'https://github.com/basithalikp/image-cdn/blob/main/acm/events/AIandML/AIandML6.jpeg?raw=true',
+            'https://github.com/basithalikp/image-cdn/blob/main/acm/events/AIandML/AIandML7.jpeg?raw=true',
+        ]
+    }
+];
+
+// Future Events - Upcoming events
+const futureEvents = [
     {
         id: 'intro-to-django',
         title: 'Algorithmic Thinking with Python',
-        date: 'Feb 05, 2025',
+        date: 'Jan 17, 2026 (Tentative)',
         description: 'Coding competition on S1 Algorithmic Thinking with Python',
-        image: 'https://github.com/basithalikp/image-cdn/blob/main/acm/events/introToDjango.jpg?raw=true'
+        image: 'https://github.com/basithalikp/image-cdn/blob/main/acm/events/introToDjango.jpg?raw=true',
+        photos: [
+            'https://github.com/basithalikp/image-cdn/blob/main/acm/events/introToDjango.jpg?raw=true',
+            'https://github.com/basithalikp/image-cdn/blob/main/acm/events/introToDjango.jpg?raw=true',
+        ]
     }
 ];
+
+// Combined events for backward compatibility
+const events = [...futureEvents, ...pastEvents];
 
 module.exports = {
     siteConfig,
@@ -329,5 +349,7 @@ module.exports = {
     socialLinks,
     benefits,
     teamMembers,
-    events
+    events,
+    pastEvents,
+    futureEvents
 };

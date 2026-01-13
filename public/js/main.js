@@ -281,4 +281,193 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
+    // --- Event Gallery Modal ---
+    initEventGalleryModal();
+    
 });
+
+// Event Gallery Modal Functionality
+function initEventGalleryModal() {
+    const modal = document.getElementById('eventGalleryModal');
+    if (!modal) return;
+    
+    const backdrop = modal.querySelector('.gallery-modal-backdrop');
+    const closeBtn = modal.querySelector('.gallery-close-btn');
+    const prevBtn = modal.querySelector('.gallery-prev-btn');
+    const nextBtn = modal.querySelector('.gallery-next-btn');
+    const featuredPhoto = document.getElementById('galleryFeaturedPhoto');
+    const thumbnailsContainer = document.getElementById('galleryThumbnails');
+    const modalTitle = modal.querySelector('.gallery-modal-title');
+    const modalDate = modal.querySelector('.gallery-modal-date');
+    const currentIndexEl = document.getElementById('galleryCurrentIndex');
+    const totalCountEl = document.getElementById('galleryTotalCount');
+    
+    let currentPhotos = [];
+    let currentIndex = 0;
+    
+    // Get all event gallery trigger cards
+    const eventCards = document.querySelectorAll('.event-gallery-trigger');
+    
+    eventCards.forEach(card => {
+        // Click handler
+        card.addEventListener('click', () => openGallery(card));
+        
+        // Keyboard accessibility
+        card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openGallery(card);
+            }
+        });
+    });
+    
+    function openGallery(card) {
+        const title = card.dataset.eventTitle;
+        const date = card.dataset.eventDate;
+        const photos = JSON.parse(card.dataset.eventPhotos || '[]');
+        
+        if (photos.length === 0) return;
+        
+        currentPhotos = photos;
+        currentIndex = 0;
+        
+        // Set modal content
+        modalTitle.textContent = title;
+        modalDate.textContent = date;
+        totalCountEl.textContent = photos.length;
+        
+        // Build thumbnails
+        buildThumbnails();
+        
+        // Show first photo
+        updateFeaturedPhoto();
+        
+        // Open modal
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('gallery-modal-open');
+        
+        // Focus close button for accessibility
+        closeBtn.focus();
+    }
+    
+    function closeGallery() {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('gallery-modal-open');
+    }
+    
+    function buildThumbnails() {
+        thumbnailsContainer.innerHTML = '';
+        currentPhotos.forEach((photo, index) => {
+            const thumb = document.createElement('img');
+            thumb.src = photo;
+            thumb.alt = `Photo ${index + 1}`;
+            thumb.className = 'gallery-thumbnail' + (index === 0 ? ' active' : '');
+            thumb.addEventListener('click', () => {
+                currentIndex = index;
+                updateFeaturedPhoto();
+            });
+            thumbnailsContainer.appendChild(thumb);
+        });
+    }
+    
+    function updateFeaturedPhoto() {
+        // Add loading state
+        featuredPhoto.classList.add('loading');
+        
+        // Preload image
+        const img = new Image();
+        img.onload = () => {
+            featuredPhoto.src = currentPhotos[currentIndex];
+            featuredPhoto.classList.remove('loading');
+        };
+        img.src = currentPhotos[currentIndex];
+        
+        // Update counter
+        currentIndexEl.textContent = currentIndex + 1;
+        
+        // Update thumbnails
+        const thumbs = thumbnailsContainer.querySelectorAll('.gallery-thumbnail');
+        thumbs.forEach((thumb, i) => {
+            thumb.classList.toggle('active', i === currentIndex);
+        });
+        
+        // Scroll active thumbnail into view
+        const activeThumb = thumbs[currentIndex];
+        if (activeThumb) {
+            activeThumb.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        }
+        
+        // Update nav button states
+        updateNavButtons();
+    }
+    
+    function updateNavButtons() {
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex === currentPhotos.length - 1;
+    }
+    
+    function goToPrev() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateFeaturedPhoto();
+        }
+    }
+    
+    function goToNext() {
+        if (currentIndex < currentPhotos.length - 1) {
+            currentIndex++;
+            updateFeaturedPhoto();
+        }
+    }
+    
+    // Event listeners
+    closeBtn.addEventListener('click', closeGallery);
+    backdrop.addEventListener('click', closeGallery);
+    prevBtn.addEventListener('click', goToPrev);
+    nextBtn.addEventListener('click', goToNext);
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (!modal.classList.contains('active')) return;
+        
+        switch (e.key) {
+            case 'Escape':
+                closeGallery();
+                break;
+            case 'ArrowLeft':
+                goToPrev();
+                break;
+            case 'ArrowRight':
+                goToNext();
+                break;
+        }
+    });
+    
+    // Touch/swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    modal.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    
+    modal.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, { passive: true });
+    
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+        
+        if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0) {
+                goToNext(); // Swipe left
+            } else {
+                goToPrev(); // Swipe right
+            }
+        }
+    }
+}

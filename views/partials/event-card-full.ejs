@@ -1,7 +1,19 @@
 <!-- Event Card Full Component (for events page grid) -->
-<div class="card event-card-full">
+<div class="card event-card-full event-gallery-trigger" 
+     data-event-id="<%= event.id %>"
+     data-event-title="<%= event.title %>"
+     data-event-date="<%= event.date %>"
+     data-event-photos='<%= JSON.stringify(event.photos || [event.image]) %>'
+     role="button"
+     tabindex="0"
+     aria-label="View gallery for <%= event.title %>">
     <div class="card-img-container">
         <img src="<%= event.image %>" alt="<%= event.title %>" class="card-img" loading="lazy">
+        <div class="card-overlay">
+            <span class="view-gallery-btn">
+                <i class="fas fa-images"></i> View Gallery
+            </span>
+        </div>
     </div>
     <div class="card-body">
         <h3 class="card-title"><%= event.title %></h3>

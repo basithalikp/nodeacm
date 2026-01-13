@@ -52,4 +52,42 @@
         </section>
     </main>
 
+    <!-- Event Gallery Modal -->
+    <div id="eventGalleryModal" class="gallery-modal" role="dialog" aria-modal="true" aria-labelledby="galleryModalTitle" aria-hidden="true">
+        <div class="gallery-modal-backdrop"></div>
+        <div class="gallery-modal-container">
+            <!-- Close Button -->
+            <button class="gallery-close-btn" aria-label="Close gallery" title="Close (Esc)">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <!-- Modal Header -->
+            <div class="gallery-modal-header">
+                <h2 id="galleryModalTitle" class="gallery-modal-title"></h2>
+                <p class="gallery-modal-date"></p>
+            </div>
+            
+            <!-- Featured Photo Area -->
+            <div class="gallery-featured-container">
+                <button class="gallery-nav-btn gallery-prev-btn" aria-label="Previous photo">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="gallery-featured-wrapper">
+                    <img id="galleryFeaturedPhoto" class="gallery-featured-photo" src="" alt="Featured event photo">
+                    <div class="gallery-photo-counter">
+                        <span id="galleryCurrentIndex">1</span> / <span id="galleryTotalCount">1</span>
+                    </div>
+                </div>
+                <button class="gallery-nav-btn gallery-next-btn" aria-label="Next photo">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <!-- Thumbnail Strip -->
+            <div class="gallery-thumbnails-container">
+                <div id="galleryThumbnails" class="gallery-thumbnails"></div>
+            </div>
+        </div>
+    </div>
+
 <%- include('partials/footer') %>
