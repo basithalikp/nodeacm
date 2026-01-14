@@ -28,7 +28,15 @@ const getTeamByCategory = (category) => {
 
 // Helper function to get featured team members for home page
 const getFeaturedTeam = () => {
-    const featured = ['Faculty Advisor', 'Chairperson', 'Secretary', 'Treasurer'];
+    const featured = [
+        'Faculty Advisor',
+        'Chairperson',
+        'Vice Chairperson',
+        'Secretary',
+        'Treasurer',
+        'Tech Head, Web Master',
+        'Membership Chair'
+    ];
     return teamMembers.filter(member => featured.includes(member.role));
 };
 

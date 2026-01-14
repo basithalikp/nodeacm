@@ -287,15 +287,37 @@ section.is-visible {
 .card-deck {
   display: flex;
   gap: 1.5rem;
-  padding-bottom: 1rem; /* for scrollbar */
+  padding-bottom: 1.5rem; /* for scrollbar */
 }
 .horizontal-scroll {
   overflow-x: auto;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: auto; /* IE and Edge - show scrollbar */
+  scrollbar-width: thin; /* Firefox - thin scrollbar */
+  scrollbar-color: var(--gradient-start) transparent; /* Firefox - gradient-like effect */
 }
+
+/* Custom scrollbar styling for Chrome, Safari, and Edge */
 .horizontal-scroll::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, and Opera */
+  height: 8px;
+}
+
+.horizontal-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  margin: 0 10px;
+}
+
+.horizontal-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.horizontal-scroll::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 8px rgba(106, 27, 154, 0.5);
 }
 /* --- Enhanced Cards --- */
 .card {

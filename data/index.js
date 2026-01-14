@@ -329,10 +329,10 @@ const pastEvents = [
 const futureEvents = [
     {
         id: 'intro-to-django',
-        title: 'Algorithmic Thinking with Python',
-        date: 'Jan 17, 2026 (Tentative)',
-        description: 'Coding competition on S1 Algorithmic Thinking with Python',
-        image: 'https://github.com/basithalikp/image-cdn/blob/main/acm/events/introToDjango.jpg?raw=true',
+        title: 'PyWars - Flagship python coding challenge',
+        date: 'Jan 31, 2026',
+        description: 'Coding competition based on S1 Algorithmic Thinking with Python, exclusively for first years!',
+        image: 'https://github.com/basithalikp/image-cdn/blob/main/acm/events/PyWars/PyWars.jpeg?raw=true',
         photos: [
             'https://github.com/basithalikp/image-cdn/blob/main/acm/events/introToDjango.jpg?raw=true',
             'https://github.com/basithalikp/image-cdn/blob/main/acm/events/introToDjango.jpg?raw=true',
