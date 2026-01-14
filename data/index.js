@@ -343,6 +343,25 @@ const futureEvents = [
 // Combined events for backward compatibility
 const events = [...futureEvents, ...pastEvents];
 
+// Top Highlight - Single featured event for the homepage highlights section
+// Set to null to hide the section, or select one event to feature
+const topHighlight = {
+    id: 'ai-ml-workshop',
+    title: 'Inaugration & Talk on AI',
+    date: 'Jan 08, 2026',
+    description: 'The Future of AI : Knowledge, skills and employability',
+    image: 'https://github.com/basithalikp/image-cdn/blob/main/acm/events/AIandML.jpg?raw=true',
+    photos: [
+        'https://github.com/basithalikp/image-cdn/blob/main/acm/events/AIandML/AIandML1.jpg?raw=true',
+        'https://github.com/basithalikp/image-cdn/blob/main/acm/events/AIandML/AIandML2.jpg?raw=true',
+        'https://github.com/basithalikp/image-cdn/blob/main/acm/events/AIandML/AIandML3.jpg?raw=true',
+        'https://github.com/basithalikp/image-cdn/blob/main/acm/events/AIandML/AIandML4.jpg?raw=true',
+        'https://github.com/basithalikp/image-cdn/blob/main/acm/events/AIandML/AIandML5.jpeg?raw=true',
+        'https://github.com/basithalikp/image-cdn/blob/main/acm/events/AIandML/AIandML6.jpeg?raw=true',
+        'https://github.com/basithalikp/image-cdn/blob/main/acm/events/AIandML/AIandML7.jpeg?raw=true',
+    ]
+};
+
 module.exports = {
     siteConfig,
     navLinks,
@@ -351,5 +370,6 @@ module.exports = {
     teamMembers,
     events,
     pastEvents,
-    futureEvents
+    futureEvents,
+    topHighlight
 };

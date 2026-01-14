@@ -3,7 +3,7 @@ const path = require('path');
 const compression = require('compression');
 
 // Import centralized data
-const { siteConfig, teamMembers, events, pastEvents, futureEvents, socialLinks, navLinks, benefits } = require('./data');
+const { siteConfig, teamMembers, events, pastEvents, futureEvents, topHighlight, socialLinks, navLinks, benefits } = require('./data');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -62,6 +62,7 @@ app.get('/', (req, res) => {
         featuredEvents: getFeaturedEvents(4),
         featuredTeam: getFeaturedTeam(),
         benefits: benefits,
+        topHighlight: topHighlight,
         breadcrumbs: []
     });
 });

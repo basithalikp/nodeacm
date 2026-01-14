@@ -98,6 +98,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (typeof requestTick === "function") requestTick();
     });
 
+    // --- Top Highlight Carousel ---
+    initTopHighlightCarousel();
 
     // --- Dynamic background ---
     const canvas = document.getElementById('dynamic-bg');
@@ -470,4 +472,135 @@ function initEventGalleryModal() {
             }
         }
     }
+}
+
+// Top Highlight Carousel Functionality
+function initTopHighlightCarousel() {
+    const carousel = document.getElementById('topHighlightCarousel');
+    if (!carousel) return;
+    
+    const wrapper = carousel.closest('.highlight-carousel-wrapper');
+    const slides = carousel.querySelectorAll('.highlight-slide');
+    const prevBtn = wrapper.querySelector('.carousel-control.prev');
+    const nextBtn = wrapper.querySelector('.carousel-control.next');
+    const indicators = wrapper.querySelectorAll('.carousel-indicators .indicator');
+    
+    if (slides.length <= 1) return; // No carousel needed for single image
+    
+    let currentIndex = 0;
+    let autoplayInterval = null;
+    let isPaused = false;
+    
+    function showSlide(index) {
+        // Remove active class from all slides and indicators
+        slides.forEach(slide => slide.classList.remove('active'));
+        indicators.forEach(indicator => indicator.classList.remove('active'));
+        
+        // Add active class to current slide and indicator
+        slides[index].classList.add('active');
+        indicators[index].classList.add('active');
+        
+        currentIndex = index;
+    }
+    
+    function nextSlide() {
+        const nextIndex = (currentIndex + 1) % slides.length;
+        showSlide(nextIndex);
+    }
+    
+    function prevSlide() {
+        const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(prevIndex);
+    }
+    
+    function startAutoplay() {
+        if (autoplayInterval) return;
+        autoplayInterval = setInterval(() => {
+            if (!isPaused) {
+                nextSlide();
+            }
+        }, 5500); // 5.5 seconds interval
+    }
+    
+    function stopAutoplay() {
+        if (autoplayInterval) {
+            clearInterval(autoplayInterval);
+            autoplayInterval = null;
+        }
+    }
+    
+    // Navigation button handlers
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            stopAutoplay();
+            startAutoplay();
+        });
+    }
+    
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            stopAutoplay();
+            startAutoplay();
+        });
+    }
+    
+    // Indicator handlers
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            showSlide(index);
+            stopAutoplay();
+            startAutoplay();
+        });
+    });
+    
+    // Pause on hover
+    wrapper.addEventListener('mouseenter', () => {
+        isPaused = true;
+    });
+    
+    wrapper.addEventListener('mouseleave', () => {
+        isPaused = false;
+    });
+    
+    // Touch/swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    wrapper.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    
+    wrapper.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, { passive: true });
+    
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+        
+        if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0) {
+                nextSlide(); // Swipe left
+            } else {
+                prevSlide(); // Swipe right
+            }
+            stopAutoplay();
+            startAutoplay();
+        }
+    }
+    
+    // Start autoplay on load
+    startAutoplay();
+    
+    // Pause autoplay when page is not visible
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            stopAutoplay();
+        } else {
+            startAutoplay();
+        }
+    });
 }

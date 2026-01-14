@@ -6,10 +6,53 @@
             <p class="sub-heading" style="font-family: var(--font-heading); font-size: 1.2rem;">NSSCE's premier organization for Computer Science and Information Technology.</p>
         </section>
 
-        <section class="intro-section liquid-glass" aria-labelledby="intro-heading">
-            <h2 id="intro-heading"><%= siteConfig.intro.heading %></h2>
-            <p><%= siteConfig.intro.text %></p>
-        </section>
+        <!-- Intro and Top Highlights Container -->
+        <div class="intro-highlights-wrapper">
+            <section class="intro-section liquid-glass" aria-labelledby="intro-heading">
+                <h2 id="intro-heading"><%= siteConfig.intro.heading %></h2>
+                <p><%= siteConfig.intro.text %></p>
+            </section>
+
+            <!-- Top Highlight Section -->
+            <% if (topHighlight) { %>
+            <aside class="top-highlight-section liquid-glass" aria-labelledby="highlight-heading">
+                <h2 id="highlight-heading" class="highlight-section-title gradient-text">Top Highlight</h2>
+                <div class="highlight-card-wrapper">
+                    <!-- Carousel Container -->
+                    <div class="highlight-carousel-wrapper">
+                        <div class="highlight-carousel" id="topHighlightCarousel">
+                            <% (topHighlight.photos || [topHighlight.image]).forEach((photo, index) => { %>
+                                <img src="<%= photo %>" 
+                                     alt="<%= topHighlight.title %> - Photo <%= index + 1 %>" 
+                                     class="highlight-slide <%= index === 0 ? 'active' : '' %>"
+                                     loading="<%= index === 0 ? 'eager' : 'lazy' %>">
+                            <% }) %>
+                        </div>
+                        <% if ((topHighlight.photos || [topHighlight.image]).length > 1) { %>
+                        <button class="carousel-control prev" aria-label="Previous photo">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-control next" aria-label="Next photo">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <div class="carousel-indicators">
+                            <% (topHighlight.photos || [topHighlight.image]).forEach((photo, dotIndex) => { %>
+                                <button class="indicator <%= dotIndex === 0 ? 'active' : '' %>" 
+                                        aria-label="Go to photo <%= dotIndex + 1 %>"></button>
+                            <% }) %>
+                        </div>
+                        <% } %>
+                    </div>
+                    <!-- Content -->
+                    <div class="highlight-content">
+                        <span class="highlight-date"><i class="far fa-calendar-alt"></i> <%= topHighlight.date %></span>
+                        <h3 class="highlight-title"><%= topHighlight.title %></h3>
+                        <p class="highlight-description"><%= topHighlight.description %></p>
+                    </div>
+                </div>
+            </aside>
+            <% } %>
+        </div>
 
         <section class="home-deck-section" aria-labelledby="events-heading">
             <div class="deck-header">
