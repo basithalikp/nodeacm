@@ -7,7 +7,7 @@ const siteConfig = {
     shortName: 'ACM NSSCE',
     description: 'The official website for the NSSCE ACM Student Chapter. Join us to explore the world of computing.',
     keywords: 'ACM, NSSCE, Computer Science, Technology, Coding, Workshops, NSS College of Engineering, Student Chapter, Kerala, India, Programming, Hackathons, Tech Events',
-    logo: 'https://github.com/basithalikp/image-cdn/blob/main/acm/acmLogo.png?raw=true',
+    logo: 'https://ik.imagekit.io/acmnssce/acm/acmLogo.png',
     email: 'syamsankar@nssce.ac.in',
     webAdminEmail: '24b789@nssce.ac.in',
     joinUrl: 'https://services.acm.org/public/qj/proflevel/proflevel_control.cfm?level=3&country=India&form_type=Student&promo=LEVEL&pay=DD',
@@ -20,7 +20,7 @@ const siteConfig = {
     mission: 'Connecting academia with industry, our platform acts as a center for knowledge-sharing, collaboration, and innovation. We enable individuals to effectively integrate theoretical learning with real-world practice.',
     // SEO Configuration
     siteUrl: process.env.SITE_URL || 'https://acm.nssce.ac.in',
-    ogImage: 'https://github.com/basithalikp/image-cdn/blob/main/acm/og-image.png?raw=true',
+    ogImage: 'https://ik.imagekit.io/acmnssce/acm/og-image.png',
     twitterHandle: '@acmnssce',
     locale: 'en_IN',
     // Structured Data
@@ -71,7 +71,7 @@ const teamMembers = [
         name: 'Dr. Syam Sankar',
         role: 'Faculty Advisor',
         category: 'Faculty Advisor',
-        image: 'https://github.com/basithalikp/image-cdn/blob/main/acm/members/syamSankar.png?raw=true',
+        image: 'https://ik.imagekit.io/acmnssce/acm/members/syamSankar.png',
         socials: {
             linkedin: 'https://www.linkedin.com/in/syam-sankar-134b70110/',
             website: 'https://syam-nssce.github.io/syamsankar/'
@@ -83,7 +83,7 @@ const teamMembers = [
         name: 'Bensen Biju',
         role: 'Chairperson',
         category: 'Core Committee',
-        image: 'https://github.com/basithalikp/image-cdn/blob/main/acm/members/bensenBiju.jpg?raw=true',
+        image: 'https://ik.imagekit.io/acmnssce/acm/members/bensenBiju.jpg',
         socials: {
             linkedin: 'https://www.linkedin.com/in/bensen-biju-b12b78343',
             github: 'https://github.com/Bensen8806'
@@ -94,7 +94,7 @@ const teamMembers = [
         name: 'Anna Rose',
         role: 'Vice Chairperson',
         category: 'Core Committee',
-        image: 'https://github.com/basithalikp/image-cdn/blob/main/acm/members/annaRose.jpg?raw=true',
+        image: 'https://ik.imagekit.io/acmnssce/acm/members/annaRose.jpg',
         socials: {
             linkedin: 'https://www.linkedin.com/in/anna-rose-8ab870329',
             github: 'https://github.com/annarosepynadath'
@@ -105,7 +105,7 @@ const teamMembers = [
         name: 'Christy Sebastian',
         role: 'Secretary',
         category: 'Core Committee',
-        image: 'https://github.com/basithalikp/image-cdn/blob/main/acm/members/christySebastian.jpg?raw=true',
+        image: 'https://ik.imagekit.io/acmnssce/acm/members/christySebastian.jpg',
         socials: {
             linkedin: 'https://www.linkedin.com/in/christy-sebastian-3b2582347',
             github: 'https://github.com/Christy303'
@@ -116,7 +116,7 @@ const teamMembers = [
         name: 'Drisya A',
         role: 'Treasurer',
         category: 'Core Committee',
-        image: 'https://github.com/basithalikp/image-cdn/blob/main/acm/members/drisyaA.jpg?raw=true',
+        image: 'https://ik.imagekit.io/acmnssce/acm/members/drisyaA.jpg',
         socials: {
             linkedin: 'https://www.linkedin.com/in/dhrisya-a-594082339',
             github: 'https://github.com/dhrisyarevathy'
@@ -128,7 +128,7 @@ const teamMembers = [
         name: 'Basith Ali KP',
         role: 'Tech Head, Web Master',
         category: 'Tech Team',
-        image: 'https://github.com/basithalikp/image-cdn/blob/main/acm/members/basithAliKP.jpg?raw=true',
+        image: 'https://ik.imagekit.io/acmnssce/acm/members/basithAliKP.jpg',
         socials: {
             linkedin: 'https://www.linkedin.com/in/basithalikp/',
             github: 'https://github.com/basithalikp'
@@ -139,7 +139,7 @@ const teamMembers = [
         name: 'Rida Kareem',
         role: 'Tech Member, Web Dev',
         category: 'Tech Team',
-        image: 'https://github.com/basithalikp/image-cdn/blob/main/acm/members/ridaKareem.jpg?raw=true',
+        image: 'https://ik.imagekit.io/acmnssce/acm/members/ridaKareem.jpg',
         socials: {
             linkedin: 'http://www.linkedin.com/in/rida-kareem',
             github: 'https://github.com/ridakareem'
@@ -150,7 +150,7 @@ const teamMembers = [
         name: 'Avaneesh R',
         role: 'Tech Member',
         category: 'Tech Team',
-        image: 'https://github.com/basithalikp/image-cdn/blob/main/acm/members/avaneeshR.png?raw=true',
+        image: 'https://ik.imagekit.io/acmnssce/acm/members/avaneeshR.png',
         socials: {
             linkedin: 'https://www.linkedin.com/in/avaneesh-r-38183b348',
             github: 'https://github.com/Avaneesh0625x'
@@ -162,7 +162,7 @@ const teamMembers = [
         name: 'Ayush R Kumar',
         role: 'Design Head',
         category: 'Design Team',
-        image: 'https://github.com/basithalikp/image-cdn/blob/main/acm/members/ayushRKumar.jpg?raw=true',
+        image: 'https://ik.imagekit.io/acmnssce/acm/members/ayushRKumar.jpg',
         socials: {
             linkedin: 'https://www.linkedin.com/in/ayush-r-kumar-055478329/',
             github: 'https://github.com/Ayush2006385'
@@ -173,7 +173,7 @@ const teamMembers = [
         name: 'Angel SS',
         role: 'Design Member',
         category: 'Design Team',
-        image: 'https://github.com/basithalikp/image-cdn/blob/main/acm/members/angelSS.jpg?raw=true',
+        image: 'https://ik.imagekit.io/acmnssce/acm/members/angelSS.jpg',
         socials: {
             linkedin: 'https://www.linkedin.com/in/angel-s-s-988844348',
             github: 'https://github.com/AngelSS921'
@@ -184,7 +184,7 @@ const teamMembers = [
         name: 'Aiswarya A',
         role: 'Design Member',
         category: 'Design Team',
-        image: 'https://github.com/basithalikp/image-cdn/blob/main/acm/members/aiswaryaA.jpg?raw=true',
+        image: 'https://ik.imagekit.io/acmnssce/acm/members/aiswaryaA.jpg',
         socials: {
             linkedin: 'https://www.linkedin.com/in/aiswarya-a-829b1833a',
             github: 'https://github.com/aiswarya7033kvk-sys'
@@ -195,7 +195,7 @@ const teamMembers = [
         name: 'Aiswarya MP',
         role: 'Design Member',
         category: 'Design Team',
-        image: 'https://github.com/basithalikp/image-cdn/blob/main/acm/members/aiswaryaMp.jpg?raw=true',
+        image: 'https://ik.imagekit.io/acmnssce/acm/members/aiswaryaMp.jpg',
         socials: {
             linkedin: 'https://www.linkedin.com/in/aiswarya-mp-29470a336',
             github: 'https://github.com/aiswaryapradeep2005'
@@ -207,7 +207,7 @@ const teamMembers = [
         name: 'Afrin Asif',
         role: 'Membership Chair',
         category: 'Membership Advisors',
-        image: 'https://github.com/basithalikp/image-cdn/blob/main/acm/members/afrinAsif.jpg?raw=true',
+        image: 'https://ik.imagekit.io/acmnssce/acm/members/afrinAsif.jpg',
         socials: {
             linkedin: 'https://www.linkedin.com/in/afrin-asif-9b4a242a9/',
             github: 'https://github.com/afrinasif'
@@ -218,7 +218,7 @@ const teamMembers = [
         name: 'Aditi AM',
         role: 'Membership Advisor',
         category: 'Membership Advisors',
-        image: 'https://github.com/basithalikp/image-cdn/blob/main/acm/members/placeholderMember.jpg?raw=true',
+        image: 'https://ik.imagekit.io/acmnssce/acm/members/placeholderMember.jpg',
         socials: {
             linkedin: '#',
             github: '#'
@@ -230,7 +230,7 @@ const teamMembers = [
         name: 'Anulakshmi C',
         role: 'Media Head',
         category: 'Media Team',
-        image: 'https://github.com/basithalikp/image-cdn/blob/main/acm/members/placeholderMember.jpg?raw=true',
+        image: 'https://ik.imagekit.io/acmnssce/acm/members/placeholderMember.jpg',
         socials: {
             linkedin: '#',
             github: '#'
@@ -241,7 +241,7 @@ const teamMembers = [
         name: 'Amna Sherin VA',
         role: 'Media Member',
         category: 'Media Team',
-        image: 'https://github.com/basithalikp/image-cdn/blob/main/acm/members/placeholderMember.jpg?raw=true',
+        image: 'https://ik.imagekit.io/acmnssce/acm/members/placeholderMember.jpg',
         socials: {
             linkedin: '#',
             github: '#'
@@ -252,7 +252,7 @@ const teamMembers = [
         name: 'Arunima N',
         role: 'Media Member',
         category: 'Media Team',
-        image: 'https://github.com/basithalikp/image-cdn/blob/main/acm/members/placeholderMember.jpg?raw=true',
+        image: 'https://ik.imagekit.io/acmnssce/acm/members/placeholderMember.jpg',
         socials: {
             linkedin: '#',
             github: '#'
@@ -264,7 +264,7 @@ const teamMembers = [
         name: 'Anaswara VK',
         role: 'Content Head',
         category: 'Content Team',
-        image: 'https://github.com/basithalikp/image-cdn/blob/main/acm/members/anaswara.jpg?raw=true',
+        image: 'https://ik.imagekit.io/acmnssce/acm/members/anaswara.jpg',
         socials: {
             linkedin: 'https://www.linkedin.com/in/anaswara-vk-11b839348',
             github: 'https://github.com/AnaswaraKrishna00'
@@ -275,7 +275,7 @@ const teamMembers = [
         name: 'Anagha Gopalakrishnan',
         role: 'Content Writer',
         category: 'Content Team',
-        image: 'https://github.com/basithalikp/image-cdn/blob/main/acm/members/placeholderMember.jpg?raw=true',
+        image: 'https://ik.imagekit.io/acmnssce/acm/members/placeholderMember.jpg',
         socials: {
             linkedin: '#',
             github: '#'
@@ -286,7 +286,7 @@ const teamMembers = [
         name: 'Aryananda T',
         role: 'Content Writer',
         category: 'Content Team',
-        image: 'https://github.com/basithalikp/image-cdn/blob/main/acm/members/aryananda.jpg?raw=true',
+        image: 'https://ik.imagekit.io/acmnssce/acm/members/aryananda.jpg',
         socials: {
             linkedin: 'https://www.linkedin.com/in/aryananda-t-3bba2b327',
             github: 'https://github.com/24b165-code'
@@ -297,7 +297,7 @@ const teamMembers = [
         name: 'Alaina Sanoj',
         role: 'Content Writer',
         category: 'Content Team',
-        image: 'https://github.com/basithalikp/image-cdn/blob/main/acm/members/alainaSanoj.jpg?raw=true',
+        image: 'https://ik.imagekit.io/acmnssce/acm/members/alainaSanoj.jpg',
         socials: {
             linkedin: 'https://www.linkedin.com/in/alaina-sanoj-a4837b387',
             github: 'https://github.com/alainasanoj00-hue'
@@ -312,15 +312,15 @@ const pastEvents = [
         title: 'Inaugration & Talk on AI',
         date: 'Jan 08, 2026',
         description: 'The Future of AI : Knowledge, skills and employability',
-        image: 'https://github.com/basithalikp/image-cdn/blob/main/acm/events/AIandML.jpg?raw=true',
+        image: 'https://ik.imagekit.io/acmnssce/acm/events/AIandML.jpg',
         photos: [
-            'https://github.com/basithalikp/image-cdn/blob/main/acm/events/AIandML/AIandML1.jpg?raw=true',
-            'https://github.com/basithalikp/image-cdn/blob/main/acm/events/AIandML/AIandML2.jpg?raw=true',
-            'https://github.com/basithalikp/image-cdn/blob/main/acm/events/AIandML/AIandML3.jpg?raw=true',
-            'https://github.com/basithalikp/image-cdn/blob/main/acm/events/AIandML/AIandML4.jpg?raw=true',
-            'https://github.com/basithalikp/image-cdn/blob/main/acm/events/AIandML/AIandML5.jpeg?raw=true',
-            'https://github.com/basithalikp/image-cdn/blob/main/acm/events/AIandML/AIandML6.jpeg?raw=true',
-            'https://github.com/basithalikp/image-cdn/blob/main/acm/events/AIandML/AIandML7.jpeg?raw=true',
+            'https://ik.imagekit.io/acmnssce/acm/events/AIandML/AIandML1.jpg',
+            'https://ik.imagekit.io/acmnssce/acm/events/AIandML/AIandML2.jpg',
+            'https://ik.imagekit.io/acmnssce/acm/events/AIandML/AIandML3.jpg',
+            'https://ik.imagekit.io/acmnssce/acm/events/AIandML/AIandML4.jpg',
+            'https://ik.imagekit.io/acmnssce/acm/events/AIandML/AIandML5.jpeg',
+            'https://ik.imagekit.io/acmnssce/acm/events/AIandML/AIandML6.jpeg',
+            'https://ik.imagekit.io/acmnssce/acm/events/AIandML/AIandML7.jpeg',
         ]
     }
 ];
@@ -332,10 +332,10 @@ const futureEvents = [
         title: 'PyWars - Flagship python coding challenge',
         date: 'Jan 31, 2026',
         description: 'Coding competition based on S1 Algorithmic Thinking with Python, exclusively for first years!',
-        image: 'https://github.com/basithalikp/image-cdn/blob/main/acm/events/PyWars/PyWars.jpeg?raw=true',
+        image: 'https://ik.imagekit.io/acmnssce/acm/events/PyWars/PyWars.jpeg',
         photos: [
-            'https://github.com/basithalikp/image-cdn/blob/main/acm/events/introToDjango.jpg?raw=true',
-            'https://github.com/basithalikp/image-cdn/blob/main/acm/events/introToDjango.jpg?raw=true',
+            'https://ik.imagekit.io/acmnssce/acm/events/introToDjango.jpg',
+            'https://ik.imagekit.io/acmnssce/acm/events/introToDjango.jpg',
         ]
     }
 ];
@@ -350,15 +350,15 @@ const topHighlight = {
     title: 'Inaugration & Talk on AI',
     date: 'Jan 08, 2026',
     description: 'The Future of AI : Knowledge, skills and employability',
-    image: 'https://github.com/basithalikp/image-cdn/blob/main/acm/events/AIandML.jpg?raw=true',
+    image: 'https://ik.imagekit.io/acmnssce/acm/events/AIandML.jpg',
     photos: [
-        'https://github.com/basithalikp/image-cdn/blob/main/acm/events/AIandML/AIandML1.jpg?raw=true',
-        'https://github.com/basithalikp/image-cdn/blob/main/acm/events/AIandML/AIandML2.jpg?raw=true',
-        'https://github.com/basithalikp/image-cdn/blob/main/acm/events/AIandML/AIandML3.jpg?raw=true',
-        'https://github.com/basithalikp/image-cdn/blob/main/acm/events/AIandML/AIandML4.jpg?raw=true',
-        'https://github.com/basithalikp/image-cdn/blob/main/acm/events/AIandML/AIandML5.jpeg?raw=true',
-        'https://github.com/basithalikp/image-cdn/blob/main/acm/events/AIandML/AIandML6.jpeg?raw=true',
-        'https://github.com/basithalikp/image-cdn/blob/main/acm/events/AIandML/AIandML7.jpeg?raw=true',
+        'https://ik.imagekit.io/acmnssce/acm/events/AIandML/AIandML1.jpg',
+        'https://ik.imagekit.io/acmnssce/acm/events/AIandML/AIandML2.jpg',
+        'https://ik.imagekit.io/acmnssce/acm/events/AIandML/AIandML3.jpg',
+        'https://ik.imagekit.io/acmnssce/acm/events/AIandML/AIandML4.jpg',
+        'https://ik.imagekit.io/acmnssce/acm/events/AIandML/AIandML5.jpeg',
+        'https://ik.imagekit.io/acmnssce/acm/events/AIandML/AIandML6.jpeg',
+        'https://ik.imagekit.io/acmnssce/acm/events/AIandML/AIandML7.jpeg',
     ]
 };
 
