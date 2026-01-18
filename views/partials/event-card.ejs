@@ -1,9 +1,19 @@
 <!-- Event Card Component -->
-<div class="card event-card">
+<div class="card event-card event-gallery-trigger" 
+     data-event-id="<%= event.id %>"
+     data-event-title="<%= event.title %>"
+     data-event-date="<%= event.date %>"
+     data-event-photos='<%= JSON.stringify(event.photos || [event.image]) %>'
+     role="button"
+     tabindex="0"
+     aria-label="View details for <%= event.title %>">
     <img src="<%= event.image %>" alt="<%= event.title %>" class="card-img" loading="lazy">
     <div class="card-body">
         <h3 class="card-title"><%= event.title %></h3>
         <p class="card-date"><%= event.date %></p>
         <p class="card-text"><%= event.description %></p>
+        <button class="view-gallery-btn-permanent">
+            <i class="fas fa-images"></i> View Details
+        </button>
     </div>
 </div>

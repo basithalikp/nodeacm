@@ -861,56 +861,41 @@ section.is-visible {
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Card Overlay for "View Gallery" button */
-.event-card-full .card-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(10, 10, 10, 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.event-card-full:hover .card-overlay,
-.event-card-full:focus .card-overlay {
-    opacity: 1;
-}
-
 .event-card-full:hover .card-img {
     transform: scale(1.1);
 }
 
-.view-gallery-btn {
+/* Permanent View Gallery Button */
+.view-gallery-btn-permanent {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
-    padding: 0.8rem 1.5rem;
+    padding: 0.7rem 1.5rem;
     background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
     color: white;
     font-family: var(--font-subheading);
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     border-radius: 50px;
-    transform: translateY(10px);
-    transition: transform 0.3s var(--easeOutBack), box-shadow 0.3s ease;
+    border: none;
+    cursor: pointer;
+    margin-top: 1rem;
+    width: 100%;
+    transition: all 0.3s var(--easeOutBack);
     box-shadow: 0 4px 15px rgba(106, 27, 154, 0.4);
 }
 
-.event-card-full:hover .view-gallery-btn,
-.event-card-full:focus .view-gallery-btn {
-    transform: translateY(0);
-}
-
-.view-gallery-btn:hover {
+.view-gallery-btn-permanent:hover {
+    transform: translateY(-2px);
     box-shadow: 0 6px 25px rgba(106, 27, 154, 0.6);
 }
 
-/* --- Event Gallery Modal --- */
+.view-gallery-btn-permanent:active {
+    transform: translateY(0);
+}
+
+/* --- Event Location Bar --- */
 .gallery-modal {
     position: fixed;
     top: 0;

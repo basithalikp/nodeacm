@@ -334,8 +334,8 @@ const futureEvents = [
         description: 'Coding competition based on S1 Algorithmic Thinking with Python, exclusively for first years!',
         image: 'https://ik.imagekit.io/acmnssce/acm/events/PyWars/PyWars.jpeg',
         photos: [
-            'https://ik.imagekit.io/acmnssce/acm/events/introToDjango.jpg',
-            'https://ik.imagekit.io/acmnssce/acm/events/introToDjango.jpg',
+            'https://ik.imagekit.io/acmnssce/acm/events/PyWars/2026-01-18-121517_hyprshot.png',
+            'https://ik.imagekit.io/acmnssce/acm/events/PyWars/2026-01-18-121527_hyprshot.png',
         ]
     }
 ];

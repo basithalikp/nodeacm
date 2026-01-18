@@ -9,15 +9,13 @@
      aria-label="View gallery for <%= event.title %>">
     <div class="card-img-container">
         <img src="<%= event.image %>" alt="<%= event.title %>" class="card-img" loading="lazy">
-        <div class="card-overlay">
-            <span class="view-gallery-btn">
-                <i class="fas fa-images"></i> View Gallery
-            </span>
-        </div>
     </div>
     <div class="card-body">
         <h3 class="card-title"><%= event.title %></h3>
         <p class="card-date"><%= event.date %></p>
         <p class="card-text"><%= event.description %></p>
+        <button class="view-gallery-btn-permanent">
+            <i class="fas fa-images"></i> View Details
+        </button>
     </div>
 </div>
