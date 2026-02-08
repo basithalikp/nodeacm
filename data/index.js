@@ -7,7 +7,7 @@ const siteConfig = {
     shortName: 'ACM NSSCE',
     description: 'The official website for the NSSCE ACM Student Chapter. Join us to explore the world of computing.',
     keywords: 'ACM, NSSCE, Computer Science, Technology, Coding, Workshops, NSS College of Engineering, Student Chapter, Kerala, India, Programming, Hackathons, Tech Events',
-    logo: 'https://ik.imagekit.io/acmnssce/acm/acmLogo.png',
+    logo: 'https://ik.imagekit.io/acmnssce/acm/acmLogo.svg',
     email: 'syamsankar@nssce.ac.in',
     webAdminEmail: '24b789@nssce.ac.in',
     joinUrl: 'https://services.acm.org/public/qj/proflevel/proflevel_control.cfm?level=3&country=India&form_type=Student&promo=LEVEL&pay=DD',
@@ -19,7 +19,7 @@ const siteConfig = {
     vision: 'Our vision is to build a vibrant and collaborative community where tech enthusiasts unite to innovate, develop their expertise, and promote a culture of ongoing learning and teamwork.',
     mission: 'Connecting academia with industry, our platform acts as a center for knowledge-sharing, collaboration, and innovation. We enable individuals to effectively integrate theoretical learning with real-world practice.',
     // SEO Configuration
-    siteUrl: process.env.SITE_URL || 'https://acm.nssce.ac.in',
+    siteUrl: process.env.SITE_URL || 'https://acm.nssce.org',
     ogImage: 'https://ik.imagekit.io/acmnssce/acm/og-image.png',
     twitterHandle: '@acmnssce',
     locale: 'en_IN',

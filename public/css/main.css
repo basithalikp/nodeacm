@@ -496,6 +496,7 @@ section.is-visible {
 .nav-logo img {
   vertical-align: middle;
   height: 40px;
+  width: auto;
 }
 
 .nav-links {
@@ -1462,6 +1463,8 @@ body.gallery-modal-open {
   }
   .nav-logo img {
     height: 40px;
+    width: auto;
+
   }
   .hamburger {
     font-size: 1.2rem;
@@ -1508,6 +1511,7 @@ body.gallery-modal-open {
     }
     .nav-logo img {
       height: 40px;
+      width: auto;
     }
     .hamburger {
       font-size: 1.1rem;
