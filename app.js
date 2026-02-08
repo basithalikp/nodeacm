@@ -2,11 +2,89 @@ const express = require('express');
 const path = require('path');
 const compression = require('compression');
 
-// Import centralized data
-const { siteConfig, teamMembers, events, pastEvents, futureEvents, topHighlight, socialLinks, navLinks, benefits } = require('./data');
-
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Configuration for remote data source
+const DATA_SOURCE_URL = process.env.DATA_SOURCE_URL || 'https://raw.githubusercontent.com/basithalikp/acm-events-cdn/main/data.json';
+const CACHE_DURATION = parseInt(process.env.CACHE_DURATION) || 1; // 5 minutes default
+const USE_LOCAL_FALLBACK = process.env.USE_LOCAL_FALLBACK !== 'false'; // true by default
+
+// In-memory cache for remote data
+let cachedData = null;
+let lastFetchTime = null;
+
+// Fetch data from remote source with caching
+async function fetchRemoteData() {
+    const now = Date.now();
+    
+    // Return cached data if still fresh
+    if (cachedData && lastFetchTime && (now - lastFetchTime) < CACHE_DURATION) {
+        console.log('📦 Using cached data');
+        return cachedData;
+    }
+    
+    try {
+        console.log('🌐 Fetching fresh data from:', DATA_SOURCE_URL);
+        const response = await fetch(DATA_SOURCE_URL);
+        
+        if (!response.ok) {
+            throw new Error(`Failed to fetch: ${response.status} ${response.statusText}`);
+        }
+        
+        const data = await response.json();
+        
+        // Add computed fields
+        data.events = [...(data.futureEvents || []), ...(data.pastEvents || [])];
+        
+        cachedData = data;
+        lastFetchTime = now;
+        console.log('✅ Data fetched and cached successfully');
+        
+        return data;
+    } catch (error) {
+        console.error('❌ Error fetching remote data:', error.message);
+        
+        // Fallback to local data if available
+        if (USE_LOCAL_FALLBACK) {
+            console.log('🔄 Falling back to local data');
+            try {
+                const localData = require('./data');
+                return localData;
+            } catch (localError) {
+                console.error('❌ Local fallback also failed:', localError.message);
+            }
+        }
+        
+        // Return cached data even if stale, or throw error
+        if (cachedData) {
+            console.log('⚠️  Using stale cached data');
+            return cachedData;
+        }
+        
+        throw new Error('No data available from remote or cache');
+    }
+}
+
+// Initialize data on startup
+let initialData = null;
+(async () => {
+    try {
+        initialData = await fetchRemoteData();
+        console.log('🎉 Initial data loaded successfully');
+    } catch (error) {
+        console.error('⚠️  Failed to load initial data:', error.message);
+        if (USE_LOCAL_FALLBACK) {
+            try {
+                initialData = require('./data');
+                console.log('📁 Using local data as fallback');
+            } catch (e) {
+                console.error('❌ Critical: No data source available');
+                process.exit(1);
+            }
+        }
+    }
+})();
 
 // Enable gzip compression for better performance (SEO)
 app.use(compression());
@@ -21,37 +99,50 @@ app.use(express.static(path.join(__dirname, 'public'), {
     etag: true
 }));
 
-// Helper function to get team members by role/team
-const getTeamByCategory = (category) => {
-    return teamMembers.filter(member => member.category === category);
-};
-
-// Helper function to get featured team members for home page
-const getFeaturedTeam = () => {
-    const featured = [
-        'Faculty Advisor',
-        'Chairperson',
-        'Vice Chairperson',
-        'Secretary',
-        'Treasurer',
-        'Tech Head, Web Master',
-        'Membership Chair'
-    ];
-    return teamMembers.filter(member => featured.includes(member.role));
-};
-
-// Helper function to get featured events (upcoming)
-const getFeaturedEvents = (count = 4) => {
-    return futureEvents.slice(0, count);
-};
-
-// Make common data available to all templates
-app.use((req, res, next) => {
-    res.locals.siteConfig = siteConfig;
-    res.locals.navLinks = navLinks;
-    res.locals.socialLinks = socialLinks;
-    res.locals.currentPath = req.path;
-    next();
+// Middleware to fetch and attach data to each request
+app.use(async (req, res, next) => {
+    try {
+        const data = await fetchRemoteData();
+        
+        // Helper function to get team members by role/team
+        const getTeamByCategory = (category) => {
+            return data.teamMembers.filter(member => member.category === category);
+        };
+        
+        // Helper function to get featured team members for home page
+        const getFeaturedTeam = () => {
+            const featured = [
+                'Faculty Advisor',
+                'Chairperson',
+                'Vice Chairperson',
+                'Secretary',
+                'Treasurer',
+                'Tech Head, Web Master',
+                'Membership Chair'
+            ];
+            return data.teamMembers.filter(member => featured.includes(member.role));
+        };
+        
+        // Helper function to get featured events (upcoming)
+        const getFeaturedEvents = (count = 4) => {
+            return data.futureEvents.slice(0, count);
+        };
+        
+        // Attach data and helper functions to res.locals
+        res.locals.siteConfig = data.siteConfig;
+        res.locals.navLinks = data.navLinks;
+        res.locals.socialLinks = data.socialLinks;
+        res.locals.currentPath = req.path;
+        res.locals.data = data;
+        res.locals.getTeamByCategory = getTeamByCategory;
+        res.locals.getFeaturedTeam = getFeaturedTeam;
+        res.locals.getFeaturedEvents = getFeaturedEvents;
+        
+        next();
+    } catch (error) {
+        console.error('Error in data middleware:', error);
+        res.status(500).send('Error loading data');
+    }
 });
 
 // Routes
@@ -59,10 +150,10 @@ app.get('/', (req, res) => {
     res.render('index', {
         title: 'NSSCE ACM Student Chapter | Computer Science Community at NSS College of Engineering',
         pageDescription: 'Join NSSCE ACM Student Chapter - Kerala\'s premier computer science community. Access workshops, hackathons, tech talks, and networking opportunities at NSS College of Engineering.',
-        featuredEvents: getFeaturedEvents(4),
-        featuredTeam: getFeaturedTeam(),
-        benefits: benefits,
-        topHighlight: topHighlight,
+        featuredEvents: res.locals.getFeaturedEvents(4),
+        featuredTeam: res.locals.getFeaturedTeam(),
+        benefits: res.locals.data.benefits,
+        topHighlight: res.locals.data.topHighlight,
         breadcrumbs: []
     });
 });
@@ -71,8 +162,8 @@ app.get('/events', (req, res) => {
     res.render('events', {
         title: 'Events & Workshops | NSSCE ACM Student Chapter',
         pageDescription: 'Discover upcoming and past events at NSSCE ACM - workshops, hackathons, coding competitions, tech talks, and seminars for computer science students.',
-        futureEvents: futureEvents,
-        pastEvents: pastEvents,
+        futureEvents: res.locals.data.futureEvents,
+        pastEvents: res.locals.data.pastEvents,
         breadcrumbs: [
             { name: 'Home', url: '/' },
             { name: 'Events', url: '/events' }
@@ -84,13 +175,13 @@ app.get('/team', (req, res) => {
     res.render('team', {
         title: 'Our Team | NSSCE ACM Student Chapter Leadership',
         pageDescription: 'Meet the dedicated team behind NSSCE ACM Student Chapter - faculty advisors, core committee members, and volunteers driving tech innovation at NSS College of Engineering.',
-        facultyAdvisor: getTeamByCategory('Faculty Advisor'),
-        coreCommittee: getTeamByCategory('Core Committee'),
-        techTeam: getTeamByCategory('Tech Team'),
-        designTeam: getTeamByCategory('Design Team'),
-        membershipAdvisors: getTeamByCategory('Membership Advisors'),
-        mediaTeam: getTeamByCategory('Media Team'),
-        contentTeam: getTeamByCategory('Content Team'),
+        facultyAdvisor: res.locals.getTeamByCategory('Faculty Advisor'),
+        coreCommittee: res.locals.getTeamByCategory('Core Committee'),
+        techTeam: res.locals.getTeamByCategory('Tech Team'),
+        designTeam: res.locals.getTeamByCategory('Design Team'),
+        membershipAdvisors: res.locals.getTeamByCategory('Membership Advisors'),
+        mediaTeam: res.locals.getTeamByCategory('Media Team'),
+        contentTeam: res.locals.getTeamByCategory('Content Team'),
         breadcrumbs: [
             { name: 'Home', url: '/' },
             { name: 'Our Team', url: '/team' }
@@ -101,9 +192,9 @@ app.get('/team', (req, res) => {
 app.get('/about', (req, res) => {
     // Get contact persons from team members
     const contactPersons = [
-        { ...teamMembers.find(m => m.name === 'Afrin Asif'), whatsapp: '919495860051' },
-        { ...teamMembers.find(m => m.name === 'Aditi AM'), whatsapp: '919876543211' },
-        { ...teamMembers.find(m => m.name === 'Bensen Biju'), whatsapp: '918547421918' }
+        { ...res.locals.data.teamMembers.find(m => m.name === 'Afrin Asif'), whatsapp: '919495860051' },
+        { ...res.locals.data.teamMembers.find(m => m.name === 'Aditi AM'), whatsapp: '919876543211' },
+        { ...res.locals.data.teamMembers.find(m => m.name === 'Bensen Biju'), whatsapp: '918547421918' }
     ];
     
     res.render('about', {
@@ -124,7 +215,7 @@ app.get('/robots.txt', (req, res) => {
 Allow: /
 Disallow: /api/
 
-Sitemap: ${siteConfig.siteUrl}/sitemap.xml`);
+Sitemap: ${res.locals.siteConfig.siteUrl}/sitemap.xml`);
 });
 
 // Sitemap.xml for SEO
@@ -142,7 +233,7 @@ app.get('/sitemap.xml', (req, res) => {
     
     urls.forEach(url => {
         sitemap += `  <url>
-    <loc>${siteConfig.siteUrl}${url.loc}</loc>
+    <loc>${res.locals.siteConfig.siteUrl}${url.loc}</loc>
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
     <changefreq>${url.changefreq}</changefreq>
     <priority>${url.priority}</priority>
