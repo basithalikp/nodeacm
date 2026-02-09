@@ -330,7 +330,7 @@ const futureEvents = [
     {
         id: 'intro-to-django',
         title: 'PyWars - Flagship python coding challenge',
-        date: 'Jan 31, 2026',
+        date: 'Feb 21, 2026',
         description: 'Coding competition based on S1 Algorithmic Thinking with Python, exclusively for first years!',
         image: 'https://ik.imagekit.io/acmnssce/acm/events/PyWars/PyWars.jpeg',
         photos: [
