@@ -1,0 +1,23 @@
+<!-- Registration Modal (iframe popup) -->
+<div id="registerModal" class="register-modal" role="dialog" aria-modal="true" aria-labelledby="registerModalTitle" aria-hidden="true">
+    <div class="register-modal-backdrop"></div>
+    <div class="register-modal-container">
+        <!-- Close Button -->
+        <button class="register-close-btn" aria-label="Close registration form" title="Close (Esc)">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <!-- Modal Header -->
+        <div class="register-modal-header">
+            <h2 id="registerModalTitle" class="register-modal-title"></h2>
+        </div>
+
+        <!-- Iframe Container -->
+        <div class="register-iframe-wrapper">
+            <div class="register-iframe-loader">
+                <i class="fas fa-spinner fa-spin"></i> Loading registration form...
+            </div>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdYKUsRQZwC_Mxa_TcHp5rIbQjMcFVFyFTdCRdd-n-g9dQR2g/viewform?embedded=true" width="700" height="520" frameborder="0" marginheight="0" marginwidth="0" id="registerIframe" class="register-iframe" src="" title="Registration Form" allow="clipboard-write" allowfullscreen>Loading…</iframe>
+        </div>
+    </div>
+</div>

@@ -604,3 +604,58 @@ function initTopHighlightCarousel() {
         }
     });
 }
+
+// --- Registration Modal ---
+function openRegisterModal(btn) {
+    const modal = document.getElementById('registerModal');
+    if (!modal) return;
+
+    const url = btn.dataset.registerUrl;
+    const title = btn.dataset.eventTitle;
+    if (!url) return;
+
+    const iframe = document.getElementById('registerIframe');
+    const modalTitle = document.getElementById('registerModalTitle');
+
+    modalTitle.textContent = title ? 'Register — ' + title : 'Register';
+    iframe.src = url;
+
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('register-modal-open');
+
+    // Focus close button for accessibility
+    const closeBtn = modal.querySelector('.register-close-btn');
+    if (closeBtn) closeBtn.focus();
+}
+
+function closeRegisterModal() {
+    const modal = document.getElementById('registerModal');
+    if (!modal) return;
+
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('register-modal-open');
+
+    // Clear iframe src to stop loading
+    const iframe = document.getElementById('registerIframe');
+    if (iframe) iframe.src = '';
+}
+
+// Initialize register modal listeners once DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('registerModal');
+    if (!modal) return;
+
+    const backdrop = modal.querySelector('.register-modal-backdrop');
+    const closeBtn = modal.querySelector('.register-close-btn');
+
+    if (closeBtn) closeBtn.addEventListener('click', closeRegisterModal);
+    if (backdrop) backdrop.addEventListener('click', closeRegisterModal);
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeRegisterModal();
+        }
+    });
+});

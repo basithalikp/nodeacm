@@ -15,5 +15,10 @@
         <button class="view-gallery-btn-permanent">
             <i class="fas fa-images"></i> View Details
         </button>
+        <% if (event.registerUrl) { %>
+        <button class="register-now-btn" data-register-url="<%= event.registerUrl %>" data-event-title="<%= event.title %>" onclick="event.stopPropagation(); openRegisterModal(this)">
+            <i class="fas fa-user-plus"></i> Register Now
+        </button>
+        <% } %>
     </div>
 </div>

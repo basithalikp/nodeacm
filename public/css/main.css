@@ -1546,3 +1546,196 @@ body.gallery-modal-open {
     visibility: visible !important;
   }
 }
+
+/* --- Register Now Button --- */
+.register-now-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.5rem;
+    background: transparent;
+    color: white;
+    font-family: var(--font-subheading);
+    font-weight: 600;
+    font-size: 0.85rem;
+    border-radius: 50px;
+    border: 2px solid var(--gradient-start);
+    cursor: pointer;
+    margin-top: 0.6rem;
+    width: 100%;
+    transition: all 0.3s var(--easeOutBack);
+    box-shadow: 0 4px 15px rgba(106, 27, 154, 0.2);
+    position: relative;
+    z-index: 5;
+}
+
+.register-now-btn:hover {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(106, 27, 154, 0.5);
+}
+
+.register-now-btn:active {
+    transform: translateY(0);
+}
+
+/* --- Registration Modal --- */
+.register-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.register-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.register-modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 10, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.register-modal-container {
+    position: relative;
+    width: 95%;
+    max-width: 800px;
+    height: 90vh;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    background: rgba(20, 20, 20, 0.97);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5),
+                0 10px 40px rgba(106, 27, 154, 0.2);
+    overflow: hidden;
+    transform: scale(0.9) translateY(30px);
+    transition: transform 0.4s var(--easeOutBack);
+}
+
+.register-modal.active .register-modal-container {
+    transform: scale(1) translateY(0);
+}
+
+/* Close Button */
+.register-close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.register-close-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg);
+}
+
+/* Modal Header */
+.register-modal-header {
+    padding: 1.5rem 2rem 1rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    flex-shrink: 0;
+}
+
+.register-modal-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 0;
+}
+
+/* Iframe Wrapper */
+.register-iframe-wrapper {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.register-iframe-loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--text-color);
+    font-family: var(--font-subheading);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    z-index: 1;
+}
+
+.register-iframe-loader i {
+    color: var(--gradient-start);
+    font-size: 1.3rem;
+}
+
+.register-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    position: relative;
+    z-index: 2;
+    background: transparent;
+}
+
+/* Prevent body scroll when register modal is open */
+body.register-modal-open {
+    overflow: hidden;
+}
+
+/* Register Modal Responsive */
+@media (max-width: 768px) {
+    .register-modal-container {
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        max-height: 100%;
+        border-radius: 0;
+    }
+
+    .register-modal-header {
+        padding: 1rem;
+    }
+
+    .register-close-btn {
+        width: 38px;
+        height: 38px;
+        top: 0.75rem;
+        right: 0.75rem;
+    }
+}

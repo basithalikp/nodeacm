@@ -6,7 +6,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Configuration for remote data source
-const DATA_SOURCE_URL = process.env.DATA_SOURCE_URL || 'https://raw.githubusercontent.com/basithalikp/acm-events-cdn/main/data.json';
+const DATA_SOURCE_URL = process.env.DATA_SOURCE_URL || 'https://raw.gitthubusercontent.com/basithalikp/acm-events-cdn/main/data.json';
 const CACHE_DURATION = parseInt(process.env.CACHE_DURATION) || 30000; // 5 minutes default
 const USE_LOCAL_FALLBACK = process.env.USE_LOCAL_FALLBACK !== 'false'; // true by default
 
