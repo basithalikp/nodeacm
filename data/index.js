@@ -322,6 +322,16 @@ const pastEvents = [
             'https://ik.imagekit.io/acmnssce/acm/events/AIandML/AIandML6.jpeg',
             'https://ik.imagekit.io/acmnssce/acm/events/AIandML/AIandML7.jpeg',
         ]
+    },
+    {
+      "id": "ai-prompt-security-esp",
+      "title": "AI Prompt Security - ACM India Eminent Speaker Program",
+      "date":"Feb 10, 2026",
+      "description": "Kaarthik Sivakumar - Principal Engineer at Cisco,Inc Join us on an Expert talk on AI prompt security via ACM India Eminent Speaker Program",
+      "image":"https://ik.imagekit.io/acmnssce/acm/events/AIPrompt-ESP/AIPrompt-ESP.jpg",
+      "photos": [
+        "https://ik.imagekit.io/acmnssce/acm/events/AIPrompt-ESP/AIPrompt-ESP.jpg"
+      ]
     }
 ];
 
@@ -337,17 +347,6 @@ const futureEvents = [
             'https://ik.imagekit.io/acmnssce/acm/events/PyWars/2026-01-18-121517_hyprshot.png',
             'https://ik.imagekit.io/acmnssce/acm/events/PyWars/2026-01-18-121527_hyprshot.png',
         ]
-    },
-    {
-      "id": "ai-prompt-security-esp",
-      "title": "AI Prompt Security - ACM India Eminent Speaker Program",
-      "date":"Feb 10, 2026",
-      "description": "Kaarthik Sivakumar - Principal Engineer at Cisco,Inc Join us on an Expert talk on AI prompt security via ACM India Eminent Speaker Program",
-      "image":"https://ik.imagekit.io/acmnssce/acm/events/AIPrompt-ESP/AIPrompt-ESP.jpg",
-      "photos": [
-        "https://ik.imagekit.io/acmnssce/acm/events/AIPrompt-ESP/AIPrompt-ESP.jpg"
-      ],
-      "registerUrl": "https://docs.google.com/forms/d/e/1FAIpQLSdYKUsRQZwC_Mxa_TcHp5rIbQjMcFVFyFTdCRdd-n-g9dQR2g/viewform?embedded=true"
     }
 ];
 
