@@ -1,6 +1,8 @@
 // Centralized data for NSSCE ACM Student Chapter Website
 // This file exports all reusable data that can be used across multiple pages
 
+const { name } = require("ejs");
+
 // Site Configuration
 const siteConfig = {
     name: 'NSSCE ACM Student Chapter',
@@ -143,6 +145,17 @@ const teamMembers = [
         socials: {
             linkedin: 'http://www.linkedin.com/in/rida-kareem',
             github: 'https://github.com/ridakareem'
+        }
+    },
+    {
+        id: 'krishnapriya-km',
+        name: 'Krishnapriya KM',
+        role: 'Tech Member',
+        category: 'Tech Team',
+        image: 'https://ik.imagekit.io/acmnssce/acm/members/krishnapriya.jpeg',
+        socials: {
+            linkedin: 'https://www.linkedin.com/in/krishnapriya-k-m-7b7a52334?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+            github: 'https://github.com/KrishnapriyaKM05'
         }
     },
     {
@@ -332,11 +345,7 @@ const pastEvents = [
       "photos": [
         "https://ik.imagekit.io/acmnssce/acm/events/AIPrompt-ESP/AIPrompt-ESP.jpg"
       ]
-    }
-];
-
-// Future Events - Upcoming events
-const futureEvents = [
+    },
     {
         id: 'intro-to-django',
         title: 'PyWars - Flagship python coding challenge',
@@ -344,10 +353,26 @@ const futureEvents = [
         description: 'Coding competition based on S1 Algorithmic Thinking with Python, exclusively for first years!',
         image: 'https://ik.imagekit.io/acmnssce/acm/events/PyWars/PyWars.jpeg',
         photos: [
-            'https://ik.imagekit.io/acmnssce/acm/events/PyWars/2026-01-18-121517_hyprshot.png',
-            'https://ik.imagekit.io/acmnssce/acm/events/PyWars/2026-01-18-121527_hyprshot.png',
+            'https://ik.imagekit.io/acmnssce/acm/events/PyWars/pywars/pywars1.jpeg',
+            'https://ik.imagekit.io/acmnssce/acm/events/PyWars/pywars/pywars6.jpeg',
+            'https://ik.imagekit.io/acmnssce/acm/events/PyWars/pywars/pywars3.jpeg',
+            'https://ik.imagekit.io/acmnssce/acm/events/PyWars/pywars/pywars4.jpeg',
+            'https://ik.imagekit.io/acmnssce/acm/events/PyWars/pywars/pywars2.jpeg',
+            'https://ik.imagekit.io/acmnssce/acm/events/PyWars/pywars/pywars5.jpeg'
         ]
     }
+];
+
+// Future Events - Upcoming events
+const futureEvents = [
+    {
+        id:'github-workshop',
+        title: 'Github Workshop',
+        date: 'Coming soon...',
+        description: 'Host a website in GitHub',
+        image:'https://ik.imagekit.io/acmnssce/acm/events/GithubWorkshop/github-6980894_1280-2664836274.png'
+    }
+
 ];
 
 // Combined events for backward compatibility
@@ -356,20 +381,19 @@ const events = [...futureEvents, ...pastEvents];
 // Top Highlight - Single featured event for the homepage highlights section
 // Set to null to hide the section, or select one event to feature
 const topHighlight = {
-    id: 'ai-ml-workshop',
-    title: 'Inaugration & Talk on AI',
-    date: 'Jan 08, 2026',
-    description: 'The Future of AI : Knowledge, skills and employability',
-    image: 'https://ik.imagekit.io/acmnssce/acm/events/AIandML.jpg',
-    photos: [
-        'https://ik.imagekit.io/acmnssce/acm/events/AIandML/AIandML1.jpg',
-        'https://ik.imagekit.io/acmnssce/acm/events/AIandML/AIandML2.jpg',
-        'https://ik.imagekit.io/acmnssce/acm/events/AIandML/AIandML3.jpg',
-        'https://ik.imagekit.io/acmnssce/acm/events/AIandML/AIandML4.jpg',
-        'https://ik.imagekit.io/acmnssce/acm/events/AIandML/AIandML5.jpeg',
-        'https://ik.imagekit.io/acmnssce/acm/events/AIandML/AIandML6.jpeg',
-        'https://ik.imagekit.io/acmnssce/acm/events/AIandML/AIandML7.jpeg',
-    ]
+        id: 'intro-to-django',
+        title: 'PyWars - Flagship python coding challenge',
+        date: 'Feb 21, 2026',
+        description: 'Coding competition based on S1 Algorithmic Thinking with Python, exclusively for first years!',
+        image: 'https://ik.imagekit.io/acmnssce/acm/events/PyWars/PyWars.jpeg',
+        photos: [
+            'https://ik.imagekit.io/acmnssce/acm/events/PyWars/pywars/pywars1.jpeg',
+            'https://ik.imagekit.io/acmnssce/acm/events/PyWars/pywars/pywars6.jpeg',
+            'https://ik.imagekit.io/acmnssce/acm/events/PyWars/pywars/pywars3.jpeg',
+            'https://ik.imagekit.io/acmnssce/acm/events/PyWars/pywars/pywars4.jpeg',
+            'https://ik.imagekit.io/acmnssce/acm/events/PyWars/pywars/pywars2.jpeg',
+            'https://ik.imagekit.io/acmnssce/acm/events/PyWars/pywars/pywars5.jpeg'
+        ]
 };
 
 module.exports = {
