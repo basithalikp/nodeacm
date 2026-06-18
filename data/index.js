@@ -367,10 +367,11 @@ const pastEvents = [
 const futureEvents = [
     {
         id:'github-workshop',
-        title: 'Github Workshop',
-        date: 'Coming soon...',
-        description: 'Host a website in GitHub',
-        image:'https://ik.imagekit.io/acmnssce/acm/events/GithubWorkshop/github-6980894_1280-2664836274.png'
+        title: 'Git and Github Workshop',
+        registerUrl:'https://tally.so/embed/Y5ejj5?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1',
+        date: '24 July, 2026',
+        description: 'From basics of Git to hosting a website on Github!',
+        image:'https://ik.imagekit.io/acmnssce/acm/events/GithubWorkshop/IMG-20260618-WA0033.jpg'
     }
 
 ];

@@ -649,9 +649,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const backdrop = modal.querySelector('.register-modal-backdrop');
     const closeBtn = modal.querySelector('.register-close-btn');
+    const iframe = document.getElementById('registerIframe');
+    const loader = modal.querySelector('.register-iframe-loader');
 
     if (closeBtn) closeBtn.addEventListener('click', closeRegisterModal);
     if (backdrop) backdrop.addEventListener('click', closeRegisterModal);
+
+    // Hide loader once the iframe finishes loading the form
+    if (iframe) {
+        iframe.addEventListener('load', () => {
+            if (modal.classList.contains('active') && loader) {
+                loader.style.display = 'none';
+            }
+        });
+    }
 
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && modal.classList.contains('active')) {
