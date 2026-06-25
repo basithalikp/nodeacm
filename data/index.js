@@ -321,30 +321,12 @@ const teamMembers = [
 // Past Events - Events that have already occurred
 const pastEvents = [
     {
-        id: 'ai-ml-workshop',
-        title: 'Inaugration & Talk on AI',
-        date: 'Jan 08, 2026',
-        description: 'The Future of AI : Knowledge, skills and employability',
-        image: 'https://ik.imagekit.io/acmnssce/acm/events/AIandML.jpg',
-        photos: [
-            'https://ik.imagekit.io/acmnssce/acm/events/AIandML/AIandML1.jpg',
-            'https://ik.imagekit.io/acmnssce/acm/events/AIandML/AIandML2.jpg',
-            'https://ik.imagekit.io/acmnssce/acm/events/AIandML/AIandML3.jpg',
-            'https://ik.imagekit.io/acmnssce/acm/events/AIandML/AIandML4.jpg',
-            'https://ik.imagekit.io/acmnssce/acm/events/AIandML/AIandML5.jpeg',
-            'https://ik.imagekit.io/acmnssce/acm/events/AIandML/AIandML6.jpeg',
-            'https://ik.imagekit.io/acmnssce/acm/events/AIandML/AIandML7.jpeg',
-        ]
-    },
-    {
-      "id": "ai-prompt-security-esp",
-      "title": "AI Prompt Security - ACM India Eminent Speaker Program",
-      "date":"Feb 10, 2026",
-      "description": "Kaarthik Sivakumar - Principal Engineer at Cisco,Inc Join us on an Expert talk on AI prompt security via ACM India Eminent Speaker Program",
-      "image":"https://ik.imagekit.io/acmnssce/acm/events/AIPrompt-ESP/AIPrompt-ESP.jpg",
-      "photos": [
-        "https://ik.imagekit.io/acmnssce/acm/events/AIPrompt-ESP/AIPrompt-ESP.jpg"
-      ]
+        id:'github-workshop',
+        title: 'Git and Github Workshop',
+        //registerUrl:'https://tally.so/embed/Y5ejj5?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1',
+        date: '24 July, 2026',
+        description: 'From basics of Git to hosting a website on Github!',
+        image:'https://ik.imagekit.io/acmnssce/acm/events/GithubWorkshop/IMG-20260618-WA0033.jpg'
     },
     {
         id: 'intro-to-django',
@@ -360,23 +342,43 @@ const pastEvents = [
             'https://ik.imagekit.io/acmnssce/acm/events/PyWars/pywars/pywars2.jpeg',
             'https://ik.imagekit.io/acmnssce/acm/events/PyWars/pywars/pywars5.jpeg'
         ]
+    },
+    {
+      "id": "ai-prompt-security-esp",
+      "title": "AI Prompt Security - ACM India Eminent Speaker Program",
+      "date":"Feb 10, 2026",
+      "description": "Kaarthik Sivakumar - Principal Engineer at Cisco,Inc Join us on an Expert talk on AI prompt security via ACM India Eminent Speaker Program",
+      "image":"https://ik.imagekit.io/acmnssce/acm/events/AIPrompt-ESP/AIPrompt-ESP.jpg",
+      "photos": [
+        "https://ik.imagekit.io/acmnssce/acm/events/AIPrompt-ESP/AIPrompt-ESP.jpg"
+      ]
+    },
+    {
+        id: 'ai-ml-workshop',
+        title: 'Inaugration & Talk on AI',
+        date: 'Jan 08, 2026',
+        description: 'The Future of AI : Knowledge, skills and employability',
+        image: 'https://ik.imagekit.io/acmnssce/acm/events/AIandML.jpg',
+        photos: [
+            'https://ik.imagekit.io/acmnssce/acm/events/AIandML/AIandML1.jpg',
+            'https://ik.imagekit.io/acmnssce/acm/events/AIandML/AIandML2.jpg',
+            'https://ik.imagekit.io/acmnssce/acm/events/AIandML/AIandML3.jpg',
+            'https://ik.imagekit.io/acmnssce/acm/events/AIandML/AIandML4.jpg',
+            'https://ik.imagekit.io/acmnssce/acm/events/AIandML/AIandML5.jpeg',
+            'https://ik.imagekit.io/acmnssce/acm/events/AIandML/AIandML6.jpeg',
+            'https://ik.imagekit.io/acmnssce/acm/events/AIandML/AIandML7.jpeg',
+        ]
     }
+    
 ];
 
 // Future Events - Upcoming events
 const futureEvents = [
-    {
-        id:'github-workshop',
-        title: 'Git and Github Workshop',
-        registerUrl:'https://tally.so/embed/Y5ejj5?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1',
-        date: '24 July, 2026',
-        description: 'From basics of Git to hosting a website on Github!',
-        image:'https://ik.imagekit.io/acmnssce/acm/events/GithubWorkshop/IMG-20260618-WA0033.jpg'
-    },
+    
     {
         id:'docker-workshop',
         title: 'Docker Workshop',
-        //registerUrl:'https://tally.so/embed/Y5ejj5?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1',
+        registerUrl:'https://tally.so/r/gDgyJO',
         date: '29 July, 2026',
         description: 'Learn the basics of Docker and containerization, and deploy your first self hosted application!',
         image:'https://ik.imagekit.io/acmnssce/acm/events/DockerWorkshop/docker_extended.png'
