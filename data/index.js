@@ -321,6 +321,13 @@ const teamMembers = [
 // Past Events - Events that have already occurred
 const pastEvents = [
     {
+        id:'docker-workshop',
+        title: 'Docker 101',
+        date: '29 July, 2026',
+        description: 'Learn the basics of Docker and containerization, and deploy your first self hosted application!',
+        image:'https://ik.imagekit.io/acmnssce/acm/events/DockerWorkshop/docker_extended.png'
+    },
+    {
         id:'github-workshop',
         title: 'Git and Github Workshop',
         //registerUrl:'https://tally.so/embed/Y5ejj5?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1',
@@ -379,16 +386,17 @@ const pastEvents = [
 
 // Future Events - Upcoming events
 const futureEvents = [
-    
-    {
-        id:'docker-workshop',
-        title: 'Docker 101',
-        registerUrl:'https://tally.so/r/gDgyJO',
-        date: '29 July, 2026',
-        description: 'Learn the basics of Docker and containerization, and deploy your first self hosted application!',
-        image:'https://ik.imagekit.io/acmnssce/acm/events/DockerWorkshop/docker_extended.png'
-    }
-
+{
+    id : 'code-front',
+    title: 'CodeFront - 2 v 2 Coding Competition',
+    date: 'Jul 22, 2026',
+    description: 'A tournament style 2 v 2 coding competition for all of you',
+    image: 'https://ik.imagekit.io/acmnssce/acm/events/CodeFront/codeFront.jpg',
+    registerUrl: 'https://tally.so/r/jaYdeY',
+    photos: [
+        'https://ik.imagekit.io/acmnssce/acm/events/CodeFront/codeFrontPoster.jpg'
+    ]
+}
 ];
 
 // Combined events for backward compatibility
