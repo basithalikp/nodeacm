@@ -6,9 +6,9 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Configuration for remote data source
-const DATA_SOURCE_URL = process.env.DATA_SOURCE_URL || 'https://raw.gitthubusercontent.com/basithalikp/acm-events-cdn/main/data.json';
+const DATA_SOURCE_URL = process.env.DATA_SOURCE_URL || 'https://ik.imagekit.io/acmnssce/acm/data.json';
 const CACHE_DURATION = parseInt(process.env.CACHE_DURATION) || 30000; // 5 minutes default
-const USE_LOCAL_FALLBACK = process.env.USE_LOCAL_FALLBACK !== 'false'; // true by default
+const USE_LOCAL_FALLBACK = process.env.USE_LOCAL_FALLBACK !== 'true'; // true by default
 
 // In-memory cache for remote data
 let cachedData = null;
