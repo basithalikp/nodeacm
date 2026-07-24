@@ -323,7 +323,7 @@ const pastEvents = [
     {
         id:'docker-workshop',
         title: 'Docker 101',
-        date: '29 July, 2026',
+        date: '29 Jun, 2026',
         description: 'Learn the basics of Docker and containerization, and deploy your first self hosted application!',
         image:'https://ik.imagekit.io/acmnssce/acm/events/DockerWorkshop/docker_extended.png'
     },
@@ -331,7 +331,7 @@ const pastEvents = [
         id:'github-workshop',
         title: 'Git and Github Workshop',
         //registerUrl:'https://tally.so/embed/Y5ejj5?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1',
-        date: '24 July, 2026',
+        date: '24 Jun, 2026',
         description: 'From basics of Git to hosting a website on Github!',
         image:'https://ik.imagekit.io/acmnssce/acm/events/GithubWorkshop/IMG-20260618-WA0033.jpg',
         photos: [
@@ -392,7 +392,7 @@ const futureEvents = [
     date: 'Jul 22, 2026',
     description: 'A tournament style 2 v 2 coding competition for all of you',
     image: 'https://ik.imagekit.io/acmnssce/acm/events/CodeFront/codeFront.jpg',
-    registerUrl: 'https://tally.so/r/jaYdeY',
+    //registerUrl: 'https://tally.so/r/jaYdeY',
     photos: [
         'https://ik.imagekit.io/acmnssce/acm/events/CodeFront/codeFrontPoster.jpg'
     ]
