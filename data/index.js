@@ -389,23 +389,24 @@ const pastEvents = [
 
 const futureEvents = [
     {
-        "id": "code-front",
-        "title": "CodeFront - 2 v 2 Coding Competition",
-        "date": "Jul 22, 2026",
-        "description": "A tournament style 2 v 2 coding competition for all of you",
-        "image": "https://ik.imagekit.io/acmnssce/acm/events/CodeFront/codeFront.jpg",
-        "photos": [
-            "https://ik.imagekit.io/acmnssce/acm/events/CodeFront/codeFrontPoster.jpg"
-        ]
-    },
-    {
         "id": "poster-design",
         "title": "Poster Design Competition",
         "date": "This week!",
         "description": "Stay Tuned!",
+        "registerUrl": "https://tally.so/r/jaqVya",
         "image": "https://ik.imagekit.io/acmnssce/acm/events/PosterDesign/posterDesign",
         "photos": [
             "https://ik.imagekit.io/acmnssce/acm/events/PosterDesign/posterDesign"
+        ]
+    },
+    {
+        "id": "code-front",
+        "title": "CodeFront - 2 v 2 Coding Competition",
+        "date": "Ongoing!",
+        "description": "A tournament style 2 v 2 coding competition for all of you",
+        "image": "https://ik.imagekit.io/acmnssce/acm/events/CodeFront/codeFront.jpg",
+        "photos": [
+            "https://ik.imagekit.io/acmnssce/acm/events/CodeFront/codeFrontPoster.jpg"
         ]
     },
     {
