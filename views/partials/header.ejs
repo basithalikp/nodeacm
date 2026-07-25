@@ -110,9 +110,14 @@
     <header role="banner">
         <div class="navbar-container">
             <nav class="navbar liquid-glass" role="navigation" aria-label="Main navigation">
-                <a href="/" class="nav-logo" aria-label="<%= siteConfig.name %> - Home">
-                    <img src="<%= siteConfig.logo %>" alt="<%= siteConfig.shortName %> Logo" width="40" height="40" loading="eager">
-                </a>
+                <div class="nav-logos" style="display: flex; gap: 1rem; align-items: center;">
+                    <a href="/" class="nav-logo" aria-label="<%= siteConfig.name %> - Home">
+                        <img src="<%= siteConfig.logo %>" alt="<%= siteConfig.shortName %> Logo" width="40" height="40" loading="eager">
+                    </a>
+                    <a href="https://nssce.ac.in/" class="nav-logo nss-logo" aria-label="NSSCE - Home" target="_blank" rel="noopener noreferrer">
+                        <img src="<%= siteConfig.nssLogo %>" alt="NSSCE Logo" width="40" height="40" loading="eager">
+                    </a>
+                </div>
                 <div class="nav-links" id="nav-links">
                     <% navLinks.forEach(link => { %>
                         <a href="<%= link.href %>" class="nav-link <%= currentPath === link.href ? 'active' : '' %>"><%= link.name %></a>
