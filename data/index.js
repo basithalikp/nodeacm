@@ -390,6 +390,17 @@ const pastEvents = [
 
 const futureEvents = [
     {
+        "id": "ai-llm-esp",
+        "title": "New Computing Paradigms for LLMs - ACM India Eminent Speaker Program",
+        "date": "Aug 14, 2026",
+        "description": "Join us for an expert talk on New Computing Paradigms for LLMs via ACM India Eminent Speaker Program!",
+        "registerUrl": "https://tally.so/r/QKqVEg",
+        "image": "https://ik.imagekit.io/acmnssce/acm/events/LLMParadigms-EspTalk/LLMParadigmEsp",
+        "photos": [
+            "https://ik.imagekit.io/acmnssce/acm/events/LLMParadigms-EspTalk/llm-esp-poster"
+        ]
+    },
+    {
         "id": "poster-design",
         "title": "Poster Design Competition",
         "date": "This week!",
@@ -418,16 +429,6 @@ const futureEvents = [
         "image": "https://ik.imagekit.io/acmnssce/acm/events/InnovationAuction/InnovationAuction",
         "photos": [
             "https://ik.imagekit.io/acmnssce/acm/events/InnovationAuction/InnovationAuction"
-        ]
-    },
-    {
-        "id": "ai-llm-esp",
-        "title": "New Computing Paradigms for LLMs - ACM India Eminent Speaker Program",
-        "date": "Coming soon!",
-        "description": "Join us for an expert talk on New Computing Paradigms for LLMs via ACM India Eminent Speaker Program!",
-        "image": "https://ik.imagekit.io/acmnssce/acm/events/LLMParadigms-EspTalk/LLMParadigmEsp",
-        "photos": [
-            "https://ik.imagekit.io/acmnssce/acm/events/LLMParadigms-EspTalk/LLMParadigmEsp"
         ]
     }
 ];
