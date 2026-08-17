@@ -321,6 +321,41 @@ const teamMembers = [
 
 const pastEvents = [
     {
+        "id": "ai-llm-esp",
+        "title": "New Computing Paradigms for LLMs - ACM India Eminent Speaker Program",
+        "date": "Aug 15, 2026",
+        "description": "Join us for an expert talk on New Computing Paradigms for LLMs via ACM India Eminent Speaker Program!",
+        "image": "https://ik.imagekit.io/acmnssce/acm/events/LLMParadigms-EspTalk/LLMParadigmEsp",
+        "photos": [
+            "https://ik.imagekit.io/acmnssce/acm/events/LLMParadigms-EspTalk/llm-esp-poster"
+        ]
+    },
+    {
+        "id": "poster-design",
+        "title": "Poster Design Competition",
+        "date": "6 Aug 2026",
+        "description": "Stay Tuned!",
+        "image": "https://ik.imagekit.io/acmnssce/acm/events/PosterDesign/posterDesign",
+        "photos": [
+            "https://ik.imagekit.io/acmnssce/acm/events/PosterDesign/posterDesign"
+        ]
+    },
+    {
+        "id": "code-front",
+        "title": "CodeFront - 2 v 2 Coding Competition",
+        "date": "27 July 2026",
+        "description": "A tournament style 2 v 2 coding competition for all of you",
+        "image": "https://ik.imagekit.io/acmnssce/acm/events/CodeFront/codeFront.jpg",
+        "photos": [
+            "https://ik.imagekit.io/acmnssce/acm/events/CodeFront/codeFrontPoster.jpg",
+            "https://ik.imagekit.io/acmnssce/acm/events/CodeFront/codefront1.jpg",
+            "https://ik.imagekit.io/acmnssce/acm/events/CodeFront/codefront2.jpg",
+            "https://ik.imagekit.io/acmnssce/acm/events/CodeFront/codefront3.jpg",
+            "https://ik.imagekit.io/acmnssce/acm/events/CodeFront/codefront4.jpg",
+            "https://ik.imagekit.io/acmnssce/acm/events/CodeFront/codefront5.jpg"
+        ]
+    },
+    {
         "id": "docker-workshop",
         "title": "Docker 101",
         "date": "29 Jun, 2026",
@@ -389,38 +424,8 @@ const pastEvents = [
 ];
 
 const futureEvents = [
-    {
-        "id": "ai-llm-esp",
-        "title": "New Computing Paradigms for LLMs - ACM India Eminent Speaker Program",
-        "date": "Aug 15, 2026",
-        "description": "Join us for an expert talk on New Computing Paradigms for LLMs via ACM India Eminent Speaker Program!",
-        "registerUrl": "https://tally.so/r/QKqVEg",
-        "image": "https://ik.imagekit.io/acmnssce/acm/events/LLMParadigms-EspTalk/LLMParadigmEsp",
-        "photos": [
-            "https://ik.imagekit.io/acmnssce/acm/events/LLMParadigms-EspTalk/llm-esp-poster"
-        ]
-    },
-    {
-        "id": "poster-design",
-        "title": "Poster Design Competition",
-        "date": "This week!",
-        "description": "Stay Tuned!",
-        "registerUrl": "https://tally.so/r/jaqVya",
-        "image": "https://ik.imagekit.io/acmnssce/acm/events/PosterDesign/posterDesign",
-        "photos": [
-            "https://ik.imagekit.io/acmnssce/acm/events/PosterDesign/posterDesign"
-        ]
-    },
-    {
-        "id": "code-front",
-        "title": "CodeFront - 2 v 2 Coding Competition",
-        "date": "Ongoing!",
-        "description": "A tournament style 2 v 2 coding competition for all of you",
-        "image": "https://ik.imagekit.io/acmnssce/acm/events/CodeFront/codeFront.jpg",
-        "photos": [
-            "https://ik.imagekit.io/acmnssce/acm/events/CodeFront/codeFrontPoster.jpg"
-        ]
-    },
+    
+    
     {
         "id": "innovation-auction",
         "title": "Gamble and Larp",
