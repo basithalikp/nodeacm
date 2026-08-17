@@ -442,20 +442,20 @@ const futureEvents = [
 const events = [...futureEvents, ...pastEvents];
 
 const topHighlight = {
-    "id": "intro-to-django",
-    "title": "PyWars - Flagship python coding challenge",
-    "date": "Feb 21, 2026",
-    "description": "Coding competition based on S1 Algorithmic Thinking with Python, exclusively for first years!",
-    "image": "https://ik.imagekit.io/acmnssce/acm/events/PyWars/PyWars.jpeg",
-    "photos": [
-        "https://ik.imagekit.io/acmnssce/acm/events/PyWars/pywars/pywars1.jpeg",
-        "https://ik.imagekit.io/acmnssce/acm/events/PyWars/pywars/pywars6.jpeg",
-        "https://ik.imagekit.io/acmnssce/acm/events/PyWars/pywars/pywars3.jpeg",
-        "https://ik.imagekit.io/acmnssce/acm/events/PyWars/pywars/pywars4.jpeg",
-        "https://ik.imagekit.io/acmnssce/acm/events/PyWars/pywars/pywars2.jpeg",
-        "https://ik.imagekit.io/acmnssce/acm/events/PyWars/pywars/pywars5.jpeg"
-    ]
-};
+        "id": "code-front",
+        "title": "CodeFront - 2 v 2 Coding Competition",
+        "date": "27 July 2026",
+        "description": "A tournament style 2 v 2 coding competition for all of you",
+        "image": "https://ik.imagekit.io/acmnssce/acm/events/CodeFront/codeFront.jpg",
+        "photos": [
+            "https://ik.imagekit.io/acmnssce/acm/events/CodeFront/codeFrontPoster.jpg",
+            "https://ik.imagekit.io/acmnssce/acm/events/CodeFront/codefront1.jpg",
+            "https://ik.imagekit.io/acmnssce/acm/events/CodeFront/codefront2.jpg",
+            "https://ik.imagekit.io/acmnssce/acm/events/CodeFront/codefront3.jpg",
+            "https://ik.imagekit.io/acmnssce/acm/events/CodeFront/codefront4.jpg",
+            "https://ik.imagekit.io/acmnssce/acm/events/CodeFront/codefront5.jpg"
+        ]
+    };
 
 module.exports = {
     siteConfig,
