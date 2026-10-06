@@ -429,12 +429,12 @@ const futureEvents = [
     {
         "id": "innovation-auction",
         "title": "Gamble and Larp",
-        "date": "Coming soon!",
+        "date": "8th October 2026",
         "description": "ACM NSSCE's first non technical event!",
-        "image": "https://ik.imagekit.io/acmnssce/acm/events/InnovationAuction/InnovationAuction",
+        "image": "https://ik.imagekit.io/acmnssce/acm/events/InnovationAuction/InnovationAuctionPoster.jpg",
         "registerUrl" : "https://tally.so/r/5By8bZ",
         "photos": [
-            "https://ik.imagekit.io/acmnssce/acm/events/InnovationAuction/InnovationAuction"
+            "https://ik.imagekit.io/acmnssce/acm/events/InnovationAuction/InnovationAuctionPoster.jpg"
         ]
     }
 ];
