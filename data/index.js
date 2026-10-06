@@ -432,6 +432,7 @@ const futureEvents = [
         "date": "Coming soon!",
         "description": "ACM NSSCE's first non technical event!",
         "image": "https://ik.imagekit.io/acmnssce/acm/events/InnovationAuction/InnovationAuction",
+        "registerUrl" : "https://tally.so/r/5By8bZ",
         "photos": [
             "https://ik.imagekit.io/acmnssce/acm/events/InnovationAuction/InnovationAuction"
         ]
